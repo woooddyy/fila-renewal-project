@@ -1,0 +1,1873 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+  <title>에이스 롱다운 VER 2.0 | FILA</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="../js/mainNav.js"></script>
+  <script src="../js/mobNav.js"></script>
+  <script src="../js/mypageSlide.js"></script>
+  <script src="../js/categorySection.js"></script>
+  <script src="../js/colorChangeW2.js"></script>
+  <script src="../js/thumbnailimgChg.js"></script>
+  <script src="../js/shoppingBtnW2.js"></script>
+  <script src="../js/buyBtnW2.js"></script>
+  <script src="../js/recoSliding.js"></script>
+  <script src="../js/topBtn.js"></script>
+  <script src="../js/footer.js"></script>
+  <link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+  <link rel="stylesheet" type="text/css" href="../css/bodyFont.css"/>
+  <link rel="stylesheet" type="text/css" href="../css/headerWrap.css"/>
+  <link rel="stylesheet" type="text/css" href="../css/topBtn.css"/>
+  <link rel="stylesheet" type="text/css" href="../css/footerWrap.css"/>
+  <style>
+	/*########## 공통영역 ##########*/
+		#wrap{width:100%; max-width:1920px; margin:0 auto;}
+		h1, h2{position:absolute; left:-9999px; font-size:1px; width:1px; height:1px; line-height:0; overflow:hidden;}
+		.content_info_img{width:595px; height:233px; position:absolute; left:0; top:0;}
+	
+	/*########## container ##########*/
+		#container{width:100%;}
+
+	/*########## buyWrap ##########*/
+		#buyWrap{width:100%; margin:50px 0;}
+		#buy{width:1200px; margin:0 auto;}
+
+		/*##### 이미지 영역 #####*/
+		#buy .productImg{width:45%; float:left; position:relative;}
+		#buy .mainImg, #buy .mainImg img{width:100%; border-top-right-radius:25%;}
+		#buy .thumbnail{width:50px; position:absolute; left:10px; bottom:30px;}
+		#buy .thumbnail li, #buy .thumbnail li img{width:50px; height:50px;}
+		#buy .thumbnail li{border:1px solid #ccc; margin-bottom:10px; cursor:pointer;}
+		#buy .thumbnail .thum_on{border-color:#555;}
+		#buy .cardOnline{width:100%; display:none; margin-top:60px;}
+		#buy .cardOnline a{display:block; width:100%;}
+		#buy .cardOnline img{width:100%;}
+
+		#buy .thumbnail li:hover{border-color:#555;}
+
+		/*##### 글 영역 #####*/
+		#buy .productText{width:50%; margin-left:5%; float:left;}
+		#buy .productText form{width:100%;}
+		#buy .productText fieldset{width:100%; border:none;}
+		#buy .productText legend{display:none;}
+		#buy .titleArea{width:100%; border-top:2px solid #000; border-bottom:1px solid #ccc;}
+		#buy .title{width:100%;}
+		#buy .title h3{width:80%; padding:29px 0; float:left; font-size:23px;}
+		#buy .title .likeBtn{width:20%; float:right;}
+		#buy .title .likeBtn a{display:block; width:26%; padding:30px 37% 20px; border-left:1px solid #ccc;}
+		#buy .title .likeBtn a img{width:100%;}
+		#buy .title:after{content:""; display:block; clear:both;}
+
+		/*review 영역*/
+		#buy .review{width:100%; height:17px; font-size:12px; margin-bottom:20px;}
+		#buy .review .star{width:95px; height:100%; background-image:url("../img/icon_star.png");
+			background-repeat:repeat-x; float:left; margin-right:5px;}
+		#buy .review a{line-height:18px; text-decoration:underline; color:#777;}
+		#buy .review a:hover, #buy .review a:focus{font-weight:700;}
+
+		/*price 영역*/
+		#buy .price{width:100%; font-weight:700; margin-bottom:20px;}
+		#buy .price span{font-size:25px;}
+
+		/*descArea 영역*/
+		#buy .descArea{width:100%; margin:20px 0; font-size:13px; color:#333;}
+		#buy .subTitle{display:block; width:17%; float:left; color:#000;}
+		#buy .card{width:100%; margin-bottom:15px;}
+		#buy .card span{display:block; float:left;}
+		#buy .card button{border:1px solid #ccc; background-color:transparent; width:20px; height:20px; color:#555; border-radius:5px; cursor:pointer;}
+
+		#buy .color{width:100%;margin-bottom:10px;}
+		#buy .color .subTitle{line-height:34px;}
+		#buy .color ul{float:left;}
+		#buy .color li{width:34px; height:34px; float:left;
+			margin-left:6px; margin-bottom:6px;}
+		#buy .color li:first-child{margin-left:0;}
+		#buy .color li a{display:block; width:20px; height:20px; padding:6px;
+			border:1px solid rgba(200,200,200,0); border-radius:17px;
+			transition:border-color .3s linear;}
+		#buy .color li .on{border:1px solid rgba(200,200,200,1);}
+		#buy .color li img{width:18px; height:18px; border-radius:10px; border:1px solid #ccc;}
+
+		/*색상 기능 적용 : 마우스 올리면 border 생기기*/
+		#buy .color li a:hover, #buy .color li a:focus{border:1px solid rgba(200,200,200,1);}
+
+		#buy .sizeSelect{width:100%; margin-bottom:20px;}
+		#buy select{width:120px; height:23px; border:1px solid #ccc; display:none;}
+		#buy #sizeWhite{display:block;}
+
+		#buy .number{width:100%;}
+		#buy .number .subTitle{line-height:32px;}
+		#buy .numBtnArea{float:left; border-bottom:2px solid #c7c7c7;}
+		#buy .numBtnArea input[type="button"]{width:20px; height:20px; margin:5px; cursor:pointer;
+			background-color:#fff; border:2px solid #ccc; border-radius:5px; color:#555;}
+		#buy .numBtnArea #num{text-align:center; width:70px; line-height:30px;
+			border:none;}
+		
+		#buy .number:after{content:""; display:block; clear:both;}
+			
+		/*totalArea 영역*/
+		#buy .totalArea{width:100%; margin-bottom:15px;}
+		#buy .totalTitle{width:100px; font-size:15px; float:left; line-height:30px;}
+		#buy .totalPrice{float:left; font-weight:700;}
+		#buy .totalPrice input{width:93%; text-align:right; background-color:transparent; border:none;
+			font-size:30px; font-weight:700; outline:none; margin-right:5px;}
+		
+		/*buttonArea 영역*/
+		#buy .buttonArea{width:100%;}
+		#buy .buttonArea ul{width:100%;}
+		#buy .buttonArea li{width:50%; height:55px; float:left; line-height:55px; text-align:center;}
+		#buy .buttonArea .cart{background-color:#fff; border:1px solid #ccc;
+			box-sizing:border-box;}
+		#buy .buttonArea .buy{background-color:#0B1B48; box-shadow:6px 6px 10px rgba(0,0,0,.3);
+			border:1px solid #0B1B48; box-sizing:border-box;}
+		#buy .buttonArea li input{display:block; width:100%; height:100%; text-transform:uppercase;
+			font-weight:700; border:none; background-color:transparent; cursor:pointer;}
+		#buy #buyBtn{color:#fff;}
+
+		/*기능 적용 : buy버튼에 마우스 올리면 배경색 변경*/
+		#buy .buttonArea .buy:hover{background-color:#CA363B; border-color:#CA363B;}
+
+		#buy:after, #buy .card:after, #buy .color:after, #buy .size:after,
+		#buy .totalArea:after, #buy .buttonArea ul:after{content:""; display:block; clear:both;}
+		
+	/*########## recoWrap ##########*/
+		#recoWrap{width:100%; margin-bottom:80px; padding:30px 0;
+			background-image:url("../img/bg_pattern_slash.png");}
+		#reco{width:1200px; margin:0 auto;}
+		#reco .recoTitleArea{width:100%; margin-bottom:30px;}
+		#reco .recoTitle{line-height:30px; float:left;}
+		#reco .recoTitle h3{font-weight:400; font-size:15px; font-weight:700;
+			text-indent:10px; border-left:5px solid #0B1B48;}
+		#reco .recoBtnArea{float:right; text-align:right;}
+		#reco .recoBtnArea a{display:block; float:left; margin-left:10px; padding:6px 10px;
+			text-align:center; border:1px solid #aaa; border-radius:9px; background-color:#fff;}
+		#reco .recoBtnArea a img{width:12px; height:12px;}
+
+		#reco .recoListWrap{width:100%; overflow:hidden;}
+		#reco .recoList{width:3600px;}
+		#reco .recoList ul{width:1200px; float:left;}
+		#reco .recoList li{width:240px; float:left;}
+		#reco .recoList a{display:block; width:220px; margin:0 10px;}
+		#reco .recoList a span{display:block; width:100%; padding-bottom:5px; font-size:13px;}
+		#reco .recoList .recoImg img{width:100%; border-radius:110px; box-shadow:5px 5px 10px rgba(0,0,0,.2);
+			transition:all .3s linear;}
+		#reco .recoList a:hover .recoImg img, #reco .recoList a:focus .recoImg img{
+			box-shadow:10px 10px 10px rgba(0,0,0,.5); margin-left:-10px;}
+		#reco .recoList .recoPrice b{font-size:16px;}
+		#reco .recoList .recoPrice span{display:inline;}
+		#reco .recoList .recoPrice span.sale{text-decoration:line-through; margin-right:5px; color:#aaa;}
+		#reco .recoList .sale{color:#d00;}
+
+		#reco .recoTitleArea:after, #reco .recoList:after, #reco .recoList ul:after{content:""; display:block; clear:both;}
+		
+	/*########## bannerWrap ##########*/
+		#bannerWrap{width:100%; border-bottom:2px solid #eee;}
+		#banner{width:1200px; margin:0 auto 80px;}
+		#banner p{width:600px; height:150px; float:left;}
+		#banner p a{display:block; width:100%; height:100%;}
+		#banner img{width:100%;}
+
+		#banner p a:hover, #banner p a:focus{box-shadow:0 0 10px rgba(0,0,0,.5);}
+
+		#banner:after{content:""; display:block; clear:both;}
+		
+	/*########## cateWrap ##########*/
+		#cateWrap{width:100%; margin-bottom:50px;}
+		#cateTab{width:100%; box-shadow:0 20px 20px rgba(0,0,0,.2);}
+		#cateTab .cateList{width:100%;
+			text-align:center; background-color:#fff;}
+		#cateTab li{display:inline; line-height:45px; margin:0 10px;}
+		#cateTab li a{line-height:45px; padding:0 10px;}
+		#cateTab li .on{font-weight:700; color:#d00;}
+
+		#cateTab li a:hover, #cateTab li a:focus{font-weight:700; color:#d00;}
+
+		#cateTab .cateList:after{content:""; display:block; clear:both;}
+		
+	/*########## descWrap ##########*/
+		#descWrap{width:100%; margin-bottom:100px;}
+
+		/*##### descTab #####*/
+		#descTab{width:1200px; margin:0 auto;}
+		#descTab .descTitleArea{width:800px; margin:0 auto 50px;}
+		#descTab .descTitleArea h3{padding-bottom:50px; font-size:25px;}
+		#descTab .descTitleArea a{display:block; width:100%;}
+		#descTab .descTitleArea img{width:100%;}
+
+		#descTab .detailArea{width:800px; margin:0 auto;}
+		#descTab .detailText{width:100%; margin-bottom:50px; font-size:14px; line-height:25px;}
+		#descTab .detailText strong{font-size:18px; color:#555; line-height:35px;}
+
+		#descTab .detail_img{width:100%; margin-bottom:70px;}
+		#descTab .detail_img span{display:block; width:100%; margin-bottom:10px;}
+		#descTab .detail_img img{width:100%;}
+
+		#descTab .size_info{width:100%; margin-bottom:50px;}
+		#descTab .size_info h3, #descTab .product_info h3{font-size:20px;}
+		#descTab .size_info .centi{width:100%; text-align:right; font-size:13px; color:#333; padding-bottom:5px;}
+		#descTab .sizeTable, #descTab .infoTable{width:100%; border-top:3px solid #000; box-sizing:border-box; font-size:14px; text-align:center;}
+		#descTab .sizeTable ul{width:20%; border-right:1px solid #d4d4d4; box-sizing:border-box; float:left;}
+		#descTab .size{border-left:1px solid #d4d4d4;}
+		#descTab .sizeTable li, #descTab .infoTable li{line-height:45px; border-bottom:1px solid #d4d4d4;}
+		#descTab .sizeTable .title{font-weight:700;}
+		
+		#descTab .product_info{width:100%;}
+		#descTab .product_info h3{padding-bottom:10px;}
+		#descTab .infoTable{text-align:left; text-indent:10px;}
+		#descTab .infoTable ul{width:70%; border-right:1px solid #d4d4d4; box-sizing:border-box; float:left;}
+		#descTab .infoTable .title_table{width:30%; border-left:1px solid #d4d4d4; font-weight:700;}
+		#descTab .infoTable .desc_table li{width:100%; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+
+		#descTab .sizeTable:after, #descTab .infoTable:after{content:""; display:block; clear:both;}
+		
+		/*##### delivTab #####*/
+		#delivTab{width:1200px; margin:0 auto; display:none;}
+		#delivTab .deliv{width:100%;}
+		#delivTab dl{width:49%; padding-left:1%; float:left; font-size:13px; color:#666;}
+		#delivTab dt{font-weight:700; color:#333; line-height:30px;}
+		#delivTab dd{padding-bottom:10px;}
+		#delivTab dd ul li{list-style-position:inside; list-style-type:disc;}
+		#delivTab .deliv:after{content:""; display:block; clear:both;}
+		
+		/*##### washTab #####*/
+		#washTab{width:1200px; margin:0 auto; display:none;}
+		#washTab h3{width:100%; height:170px; line-height:170px; font-size:14px; text-align:center; 
+			border-bottom:1px solid #ccc; margin-bottom:30px;}
+		#washTab .wash{width:100%;}
+		#washTab .wash ul{width:100%; margin-bottom:20px;}
+		#washTab .wash .shoes li{width:49%; float:left; padding-left:1%;}
+		#washTab .wash .shoes dl{width:100%;}
+		#washTab .wash .shoes dt{font-weight:700; color:#333; line-height:30px;}
+		#washTab .wash dd{padding-bottom:10px; font-size:13px; color:#666;}
+
+		#washTab .wash li{width:99%; padding-left:1%; padding-bottom:10px; font-size:13px; color:#666;}
+		#washTab .wash li.wash_title{width:100%; font-weight:700; font-size:18px; height:36px;
+			border-bottom:3px solid #bbb; margin-bottom:15px; padding:0; color:#333;}
+
+		#washTab .wash:after, #washTab .wash .shoes:after{content:""; display:block; clear:both;}
+
+	/*########## card_tooltip ##########*/
+		.card_tooltip{position:absolute; width:500px; border:1px solid #000; left:0; top:0; display:none; background-color:#fff;}
+		.card_tooltip h3{width:100%; line-height:30px; font-size:14px; text-align:center; color:#fff; background-color:#333;
+			margin-bottom:13px;}
+		.card_tooltip h4{width:100%; font-size:14px; text-align:center; margin-bottom:13px;}
+		.card_tooltip ul{width:80%; margin:0 auto 20px;}
+		.card_tooltip li{width:100%; font-size:13px; border-bottom:1px solid #555; line-height:30px;}
+		.card_tooltip li p{width:30%; float:left; color:#555;}
+		.card_tooltip li .cardName{width:40%; font-weight:700; color:#000;}
+
+		.card_tooltip li:after{content:""; display:block; clear:both;}
+	/*################################ 반응형 맞추기 #######################################*/
+		@media all and (min-width:1025px) and (max-width:1199px){
+			#header{width:1000px;}
+			#rightMenu{padding-left:420px;}
+			#fila_logo{width:750px;}
+			#fila_logo a{margin:8px 210px 11px 460px;}
+			#gnb li .subMenu h3{font-size:25px;}
+			#gnb li .subMenu .subMenu_fila .subMenuList, #gnb li .subMenu .subMenu_proWrap,
+			#gnb li .subMenu .subMenu_brand .subMenuList{width:1000px;}
+			#gnb li .subMenu .subMenu_visualArea div{height:125px;}
+			#gnb li .subMenu .subMenu_brand .subMenuList{width:960px;}
+			#gnb li .subMenu .subMenu_brand li{width:150px;}
+			#gnb li .subMenu .subMenu_brand li a .brandImg{height:180px;}
+			
+			#buy, #reco, #banner, #descTab, #delivTab, #washTab{width:1000px;}
+			#buy .thumbnail{bottom:120px;}
+			#buy .cardOnline{display:block;}
+			#reco .recoList{width:3000px;}
+			#reco .recoList ul{width:1000px;}
+			#reco .recoList li{width:200px;}
+			#reco .recoList a{width:180px;}
+			#reco .recoList .recoImg img{border-radius:90px;}
+			#banner p{width:500px; height:125px;}
+			.card_tooltip{width:400px;}
+
+			#footer{width:1000px;}
+			#footer #logo{width:220px;}
+			#footer .topMenu_footer{width:780px; height:157px; float:left;}
+			#footer .topMenu_footer li{width:120px; float:left; font-size:12px; padding-left:10px;}
+			#footer .bottom_footer .lang_contentArea .content_info div .content_info_img{position:absolute; right:211px;}
+		}
+
+		@media all and (min-width:768px) and (max-width:1024px){
+			h3{font-size:20px; margin-bottom:20px;}
+			#headerWrap{height:170px;}
+			#header{width:748px;}
+
+			#leftMenu{width:160px;}
+			#rightMenu{padding-left:308px;}
+			
+			#header .logo_searchArea{height:100px;}
+			#fila_logo{width:548px;}
+			#fila_logo a{width:50px; height:71px; margin:4px 139px 5px 339px;}
+
+			#searchArea{width:200px;}
+			#searchArea form{width:200px; margin:66px 0 10px;}
+			#searchArea form .input{width:200px;}
+			#searchArea form .input input{width:180px;}
+			#nav{height:40px; line-height:40px;}
+			#gnb li.mainCate{height:40px;}
+			#gnb li a.mainCate{height:40px;padding:0 20px; font-size:13px;}
+			
+			#gnb li .subMenu h3{font-size:20px; margin-bottom:0;}
+			#gnb li .subMenu .subMenu_fila h3{padding-bottom:15px;}
+			#gnb li .subMenu .subMenu_titleArea h3{padding-bottom:0;}
+			#gnb li .subMenu .subMenu_brand h3{padding-bottom:15px;}
+			#gnb li .subMenu .subMenu_fila .subMenuList, #gnb li .subMenu .subMenu_proWrap,
+			#gnb li .subMenu .subMenu_brand .subMenuList{width:748px;}
+			#gnb li .subMenu .subMenu_visualArea div{height:94px;}
+			#gnb li .subMenu .subMenu_brand .subMenuList{width:720px;}
+			#gnb li .subMenu .subMenu_brand li{width:110px; font-size:13px;}
+			#gnb li .subMenu .subMenu_brand li a .brandImg{height:127px;}
+
+			#buy, #reco, #banner, #descTab, #delivTab, #washTab{width:748px;}
+			#buy .mainImg{margin-bottom:10px;}
+			#buy .thumbnail{width:100%; position:static;}
+			#buy .thumbnail li{float:left; margin-bottom:0; margin-right:10px;}
+			#buy .cardOnline{display:block; margin-top:10px;}
+			#buy .thumbnail:after{content:""; display:block; clear:both;}
+			#buy .cardOnline{display:block;}
+			#buy .title h3{padding:20px 0; font-size:18px;}
+			#buy .title .likeBtn a{padding:20px 37% 10px;}
+			#buy .price span{font-size:20px;}
+			#buy .descArea{font-size:12px;}
+			#reco .recoList{width:3000px;}
+			#reco .recoList ul{width:748px;}
+			#reco .recoList li{width:149px;}
+			#reco .recoList a{width:130px;}
+			#reco .recoList a span{font-size:12px;}
+			#reco .recoList .recoImg img{border-radius:65px;}
+			#reco .recoList .recoPrice b{font-size:14px;}
+			#banner p{width:374px; height:93px;}
+			.card_tooltip{width:300px;}
+			#descTab .descTitleArea, #descTab .detailArea{width:748px;}
+
+			#footer{width:748px; position:static;}
+
+			#footer .top_footer{width:100%; padding:50px 0 20px;}
+			#footer #logo{width:170px; height:70px; float:none; margin:0 auto; text-align:center; position:relative;}
+			#footer #logo .down{display:block; position:absolute; right:0; bottom:0; font-size:12px; cursor:pointer; color:#ccc;}
+			#footer #logo img{width:120px;}
+			#footer .mobAddress{display:block; padding-top:20px; font-size:12px; text-align:center;}
+			#footer .mobAddress i{font-style:normal; color:#999;}
+			#footer .topMenu_footer{display:none;}
+			#footer .bottom_footer{width:100%;}
+			#footer .bottom_footer .bottomMenu_footer{height:20px; line-height:20px;
+				font-size:15px; padding-bottom:0;}
+			#footer .bottom_footer .bottomMenu_footer li{display:inline-block; line-height:20px;}
+
+			#footer .bottom_footer .snsMenu_footer{width:230px; height:30px; margin:20px auto;}
+			#footer .bottom_footer .snsMenu_footer li{width:46px; height:30px;}
+			#footer .bottom_footer .snsMenu_footer a img{width:30px; height:30px;}
+
+			#footer .bottom_footer .lang_contentArea{width:100%; height:30px; line-height:30px; margin:0; margin-bottom:20px;}
+			#footer .bottom_footer .lang_contentArea .langArea{height:30px; float:none; margin:0 auto;}
+			#footer .bottom_footer .lang_contentArea #lang{width:150px; height:28px; border:none;
+				border-bottom:2px solid #ccc; font-size:12px;}
+			#footer .bottom_footer .lang_contentArea i{display:none;}
+			#footer .bottom_footer .lang_contentArea .content_info{display:none;}
+
+			#footer address{display:none;}
+			#footer .info{padding-bottom:13px; font-size:11px;}
+		}
+
+		@media all and (min-width:480px) and (max-width:767px){
+			h3{font-size:22px; margin-bottom:20px;}
+			#headerWrap{display:none;}
+			#mobHeader{display:block;}
+
+			#buy, #reco, #banner, #descTab, #delivTab, #washTab{width:460px;}
+			#buyWrap{margin-top:10px;}
+			#buy .productImg{width:100%; float:none; margin-bottom:20px;}
+			#buy .mainImg{margin-bottom:10px;}
+			#buy .thumbnail{width:100%; position:static;}
+			#buy .thumbnail li{float:left; margin-bottom:0; margin-right:10px;}
+			#buy .cardOnline{display:block; margin-top:10px;}
+			#buy .thumbnail:after{content:""; display:block; clear:both;}
+
+			#buy .productText{width:100%; margin-left:0; float:none;}
+			#buy .title h3{width:80%; padding:15px 0; font-size:16px;}
+			#buy .title .likeBtn{width:20%;}
+			#buy .title .likeBtn a{width:30%; padding:15px 35% 10px;}
+			#buy .price{text-align:right;}
+			#buy .subTitle{width:100%; float:none; margin-bottom:5px; font-weight:700;}
+			#buy .card span{float:none;}
+			#buy .totalTitle{width:100%; float:none;}
+			#buy .totalPrice{float:none;}
+			#recoWrap{margin-bottom:30px;}
+			#reco .recoList{width:1380px;}
+			#reco .recoList ul{width:460px;}
+			#reco .recoList li{width:150px; height:240px;}
+			#reco .recoList a{width:130px;}
+			#reco .recoList a span{font-size:12px;}
+			#reco .recoList .recoImg img{border-radius:65px;}
+			#banner{margin-bottom:30px;}
+			#banner p{width:230px; height:58px;}
+			.card_tooltip{width:300px;}
+			#cateTab li a{font-size:12px;}
+			#descTab .descTitleArea, #descTab .detailArea{width:460px;}
+			#descTab .descTitleArea h3{padding-bottom:20px; font-size:16px;}
+			#descTab .detailText{font-size:12px;}
+			#descTab .detailText strong{font-size:14px;}
+			#descTab .size_info h3, #descTab .product_info h3{font-size:16px;}
+			#descTab .sizeTable{font-size:12px;}
+			#descTab .infoTable{font-size:10px;}
+			#descTab .infoTable .title_table li{width:100%; overflow:hidden; white-space:nowrap; 
+			text-overflow:ellipsis;}
+			#delivTab dl{font-size:12px; width:100%; padding-left:0; float:none;}
+			#washTab h3{font-size:13px; line-height:20px; height:60px;}
+			#washTab .wash .shoes li{width:100%; padding-left:0; float:none;}
+			#washTab .wash li.wash_title{font-size:16px;}
+
+			#container .topBtn{width:40px; height:40px; border-radius:20px; right:20px; bottom:20px;}
+			#container .topBtn a{border-radius:20px;}
+			#container .topBtn a img{border-radius:20px;}
+
+			#footer{width:460px; position:static;}
+
+			#footer .top_footer{width:100%; padding:50px 0 20px;}
+			#footer #logo{width:170px; height:70px; float:none; margin:0 auto; text-align:center; position:relative;}
+			#footer #logo .down{display:block; position:absolute; right:0; bottom:0; font-size:12px; cursor:pointer; color:#ccc;}
+			#footer #logo img{width:120px;}
+			#footer .mobAddress{display:block; padding-top:20px; font-size:12px; text-align:center;}
+			#footer .mobAddress i{font-style:normal; color:#999;}
+			#footer .topMenu_footer{display:none;}
+			#footer .bottom_footer{width:100%;}
+			#footer .bottom_footer .bottomMenu_footer{height:40px; line-height:20px;
+				font-size:15px; padding-bottom:0;}
+			#footer .bottom_footer .bottomMenu_footer li{display:inline-block; line-height:20px;}
+
+			#footer .bottom_footer .snsMenu_footer{width:225px; height:28px; margin:20px auto;}
+			#footer .bottom_footer .snsMenu_footer li{width:45px; height:28px;}
+			#footer .bottom_footer .snsMenu_footer a img{width:28px; height:28px;}
+
+			#footer .bottom_footer .lang_contentArea{width:100%; height:30px; line-height:30px; margin:0; margin-bottom:20px;}
+			#footer .bottom_footer .lang_contentArea .langArea{height:30px; float:none; margin:0 auto;}
+			#footer .bottom_footer .lang_contentArea #lang{width:150px; height:28px; border:none;
+				border-bottom:2px solid #ccc; font-size:12px;}
+			#footer .bottom_footer .lang_contentArea i{display:none;}
+			#footer .bottom_footer .lang_contentArea .content_info{display:none;}
+
+			#footer address{display:none;}
+			#footer .info{padding-bottom:13px; font-size:11px;}
+		}
+
+		@media all and (min-width:320px) and (max-width:479px){
+			h3{font-size:20px; margin-bottom:20px;}
+			#headerWrap{display:none;}
+			#mobHeader{display:block;}
+			
+			#mobHeader #searchMob{right:45px;}
+			#mobHeader #my_shopping{right:7px;}
+
+			#buy, #reco, #banner, #descTab, #delivTab, #washTab{width:300px;}
+			#buyWrap{margin-top:10px;}
+			#buy .productImg{width:100%; float:none; margin-bottom:20px;}
+			#buy .mainImg{margin-bottom:10px;}
+			#buy .thumbnail{width:100%; position:static;}
+			#buy .thumbnail li{float:left; margin-bottom:0; margin-right:10px;}
+			#buy .cardOnline{display:block; margin-top:10px;}
+			#buy .thumbnail:after{content:""; display:block; clear:both;}
+
+			#buy .productText{width:100%; margin-left:0; float:none;}
+			#buy .title h3{width:80%; padding:15px 0; font-size:16px;}
+			#buy .title .likeBtn{width:20%;}
+			#buy .title .likeBtn a{width:30%; padding:15px 35% 10px;}
+			#buy .price{text-align:right;}
+			#buy .subTitle{width:100%; float:none; margin-bottom:5px; font-weight:700;}
+			#buy .card span{float:none;}
+			#buy .totalTitle{width:100%; float:none;}
+			#buy .totalPrice{float:none;}
+			#recoWrap{margin-bottom:30px;}
+			#reco .recoList{width:900px;}
+			#reco .recoList ul{width:300px;}
+			#reco .recoList li{width:100px; height:200px;}
+			#reco .recoList a{width:80px;}
+			#reco .recoList a span{font-size:12px;}
+			#reco .recoList .recoImg img{border-radius:40px;}
+			#banner{margin-bottom:30px;}
+			#banner p{width:300px; height:75px;}
+			.card_tooltip{width:300px;}
+			#cateTab li{display:block;}
+			#cateTab li a{font-size:12px;}
+			#descTab .descTitleArea, #descTab .detailArea{width:300px;}
+			#descTab .descTitleArea h3{padding-bottom:20px; font-size:16px;}
+			#descTab .detailText{font-size:12px;}
+			#descTab .detailText strong{font-size:14px;}
+			#descTab .size_info h3, #descTab .product_info h3{font-size:16px;}
+			#descTab .sizeTable{font-size:12px;}
+			#descTab .infoTable{font-size:10px;}
+			#descTab .infoTable .title_table li{width:100%; overflow:hidden; white-space:nowrap; 
+			text-overflow:ellipsis;}
+			#delivTab dl{font-size:12px; width:100%; padding-left:0; float:none;}
+			#washTab h3{font-size:13px; line-height:20px; height:60px;}
+			#washTab .wash .shoes li{width:100%; padding-left:0; float:none;}
+			#washTab .wash li.wash_title{font-size:16px;}
+
+			#container .topBtn{width:40px; height:40px; border-radius:20px; right:20px; bottom:20px;}
+			#container .topBtn a{border-radius:20px;}
+			#container .topBtn a img{border-radius:20px;}
+
+			#footer{width:300px; position:static;}
+
+			#footer .top_footer{width:100%; padding:50px 0 20px;}
+			#footer #logo{width:130px; height:60px; float:none; margin:0 auto; position:relative; text-align:center;}
+			#footer #logo .down{display:block; position:absolute; right:0; bottom:0; font-size:12px; cursor:pointer; color:#ccc;}
+			#footer #logo img{width:100px;}
+			#footer .mobAddress{display:block; padding-top:20px; font-size:10px; text-align:center;}
+			#footer .mobAddress i{font-style:normal; color:#999;}
+			#footer .topMenu_footer{display:none;}
+			#footer .bottom_footer{width:100%;}
+			#footer .bottom_footer .bottomMenu_footer{height:40px; line-height:0;
+				font-size:13px; padding-bottom:0;}
+			#footer .bottom_footer .bottomMenu_footer li{display:inline-block; line-height:20px;}
+
+			#footer .bottom_footer .snsMenu_footer{width:200px; height:25px; margin:20px auto;}
+			#footer .bottom_footer .snsMenu_footer li{width:40px; height:25px;}
+			#footer .bottom_footer .snsMenu_footer a img{width:25px; height:25px;}
+
+			#footer .bottom_footer .lang_contentArea{width:100%; height:30px; line-height:30px; margin:0; margin-bottom:20px;}
+			#footer .bottom_footer .lang_contentArea .langArea{height:30px; float:none; margin:0 auto;}
+			#footer .bottom_footer .lang_contentArea #lang{width:150px; height:28px; border:none;
+				border-bottom:2px solid #ccc; font-size:12px;}
+			#footer .bottom_footer .lang_contentArea i{display:none;}
+			#footer .bottom_footer .lang_contentArea .content_info{display:none;}
+
+			#footer address{display:none;}
+			#footer .info{padding-bottom:13px;}
+		}
+  </style>
+  <script>
+	$(document).ready(function(){
+		/*클릭한 썸네일 테두리 진해지기*/
+		$("#buy .thumbnail li").click(function(){
+			$("#buy .thumbnail li").removeClass("thum_on");
+			$(this).addClass("thum_on");
+		});
+		/*
+			하트 클릭하면 채워지고 채워진 하트 클릭하면 되돌리기
+		*/
+		var heart=0;
+		$("#buy .title .likeBtn").click(function(){
+			if(heart==0){
+				$(this).children().children().attr("src","../img/heart_full.png");
+				heart=1;
+			}
+			else{
+				$(this).children().children().attr("src","../img/heart_blank.png");
+				heart=0;
+			}
+		});
+		/*
+			.cardBtn에 마우스 올리면 .card_tooltip 나왔다가 마우스out하면 사라지기
+		*/
+		$("#buy .card .cardBtn").mouseover(function(){
+			$(".card_tooltip").stop().fadeIn(300).css({"left":$(this).offset().left-50+"px","top":$(this).offset().top+$(this).height()+6+"px"});
+		}).mouseout(function(){
+			$(".card_tooltip").stop().fadeOut(300);
+		});
+		
+	});
+	//제이쿼리 닫음
+
+	function plusBtn(){
+		var num=document.getElementById("num");
+		num.value++;
+		var productBest1_price=279000;
+		var totPrice = document.getElementById("totPrice");
+		totPrice.value=productBest1_price*parseInt(num.value);
+	}
+	function minusBtn(){
+		var num=document.getElementById("num");
+		num.value--;
+		var productBest1_price=279000;
+		var totPrice = document.getElementById("totPrice");
+		totPrice.value=productBest1_price*parseInt(num.value);
+		if(parseInt(num.value)<=1){
+			num.value="1";
+			totPrice.value=productBest1_price;
+		}
+	}
+  </script>
+ </head>
+ <body>
+	<div id="wrap">
+		<header id="headerWrap">
+			<div id="header">
+				<h1>
+					FILA
+				</h1>
+				<div id="topMenu">
+					<h2>위쪽 메뉴 영역</h2>
+					<ul id="leftMenu">
+						<li><a href="#none" title="event">EVENT</a></li>
+						<li><a href="#none" title="editorial">EDITORIAL</a></li>
+					</ul>
+					<ul id="rightMenu">
+						<li><a href="./login.php" title="login">LOGIN</a></li>
+						<li><a href="./fila_join.php" title="join">JOIN</a></li>
+						<li><a href="#none" title="cart">
+								<span class="cart">CART</span>
+								<i><img src="../img/shopping_cart.png" alt="쇼핑카트이미지"/></i>
+							</a></li>
+						<li class="mypageArea">
+							<a href="#none" title="mypage">
+								MY PAGE <span>▼</span>
+							</a>
+							<ul>
+								<li><a href="#none" title="구매정보">구매정보</a></li>
+								<li><a href="#none" title="배송조회">배송조회</a></li>
+								<li><a href="#none" title="개인정보">개인정보</a></li>
+								<li><a href="./fila_qna.php" title="개인문의">1:1 문의</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<div class="logo_searchArea">
+					<div id="fila_logo">
+						<a href="../index.php" title="FILA">
+							<img src="../img/fila_logo.jpg" alt="휠라로고이미지"/>
+						</a>
+					</div>
+					<div id="searchArea">
+						<h2>검색영역</h2>
+						<form action="#none" method="get">
+							<fieldset>
+								<legend>검색</legend>
+								<p class="input">
+									<input id="search" type="text" name="search" title="검색" placeholder="Search..."/>
+									<input id="searchButton" type="image" name="searchButton" src="../img/search.png" alt="돋보기이미지" title="돋보기이미지"/>
+								</p>
+							</fieldset>
+						</form>
+					</div>
+				</div>
+				<div id="nav">
+					<h2>메인 네비게이션 영역</h2>
+					<ul id="gnb">
+						<li class="mainCate">
+							<a class="mainCate" href="#none" title="fila">FILA</a>
+							<div class="subMenuWrap">
+								<div class="subMenu">
+									<div class="subMenu_fila">
+										<h3>fila</h3>
+										<ul class="subMenuList">
+											<li>
+												<a href="./fila_intro.html" title="about fila">about fila</a>
+											</li>
+											<li>
+												<a href="./fila_history.html" title="history">history</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="mainCate">
+							<a class="mainCate" href="#none" title="men">MEN</a>
+							<div class="subMenuWrap">
+								<div class="subMenu">
+									<div class="subMenu_product">
+										<div class="subMenu_proWrap">
+											<div class="subMenu_titleArea">
+												<h3>men</h3>
+												<ul class="subMenuList">
+													<li class="subMenuList_title">휠라 남성 제품</li>
+													<li>
+														<a href="./fila_mensclothes.html" title="남성의류">men's clothes</a>
+													</li>
+													<li>
+														<a href="./fila_mensshoes.html" title="남성신발">men's shoes</a>
+													</li>
+													<li>
+														<a href="./fila_mensbag.html" title="남성가방">men's bag</a>
+													</li>
+													<li>
+														<a href="./fila_mensacc.html" title="남성악세서리">men's acc</a>
+													</li>
+												</ul>
+											</div>
+											<div class="subMenu_visualArea">
+												<div class="subMenu_visaul0">
+													<p class="subMenu_visual_img">
+														<a href="#none" title="rgbTheStreet">
+															<img src="../img/subMenu_men_visual0.jpg" alt="남성서브비쥬얼이미지0"/>
+														</a>
+													</p>
+												</div>
+												<div class="subMenu_visaul1">
+													<p class="subMenu_visual_img">
+														<a href="#none" title="filax10cc">
+															<img src="../img/subMenu_men_visual1.jpg" alt="남성서브비쥬얼이미지1"/>
+														</a>
+													</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="mainCate">
+							<a class="mainCate" href="#none" title="women">WOMEN</a>
+							<div class="subMenuWrap">
+								<div class="subMenu">
+									<div class="subMenu_product">
+										<div class="subMenu_proWrap">
+											<div class="subMenu_titleArea">
+												<h3>women</h3>
+												<ul class="subMenuList">
+													<li class="subMenuList_title">휠라 여성 제품</li>
+													<li>
+														<a href="./fila_womensclothes.html" title="여성의류">women's clothes</a>
+													</li>
+													<li>
+														<a href="#none" title="여성신발">women's shoes</a>
+													</li>
+													<li>
+														<a href="#none" title="여성가방">women's bag</a>
+													</li>
+													<li>
+														<a href="#none" title="여성악세서리">women's acc</a>
+													</li>
+												</ul>
+											</div>
+											<div class="subMenu_visualArea">
+												<div class="subMenu_visaul0">
+													<p class="subMenu_visual_img">
+														<a href="#none" title="checkerboard">
+															<img src="../img/subMenu_women_visual0.jpg" alt="여성서브비쥬얼이미지0"/>
+														</a>
+													</p>
+												</div>
+												<div class="subMenu_visaul1">
+													<p class="subMenu_visual_img">
+														<a href="#none" title="rgbthestreet">
+															<img src="../img/subMenu_women_visual1.jpg" alt="여성서브비쥬얼이미지1"/>
+														</a>
+													</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="mainCate">
+							<a class="mainCate" href="#none" title="boys">BOYS</a>
+							<div class="subMenuWrap">
+								<div class="subMenu">
+									<div class="subMenu_product">
+										<div class="subMenu_proWrap">
+											<div class="subMenu_titleArea">
+												<h3>boys</h3>
+												<ul class="subMenuList">
+													<li class="subMenuList_title">휠라 남성 아동 제품</li>
+													<li>
+														<a href="#none" title="남아의류">boy's clothes</a>
+													</li>
+													<li>
+														<a href="#none" title="남아신발">boy's shoes</a>
+													</li>
+													<li>
+														<a href="#none" title="남아가방">boy's bag</a>
+													</li>
+													<li>
+														<a href="#none" title="남아악세서리">boy's acc</a>
+													</li>
+												</ul>
+											</div>
+											<div class="subMenu_visualArea">
+												<div class="subMenu_visaul0">
+													<p class="subMenu_visual_img">
+														<a href="#none" title="newtrokids">
+															<img src="../img/subMenu_boys_visual0.jpg" alt="남아서브비쥬얼이미지0"/>
+														</a>
+													</p>
+												</div>
+												<div class="subMenu_visaul1">
+													<p class="subMenu_visual_img">
+														<a href="#none" title="wonniefriends">
+															<img src="../img/subMenu_boys_visual1.jpg" alt="남아서브비쥬얼이미지1"/>
+														</a>
+													</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="mainCate">
+							<a class="mainCate" href="#none" title="girls">GIRLS</a>
+							<div class="subMenuWrap">
+								<div class="subMenu">
+									<div class="subMenu_product">
+										<div class="subMenu_proWrap">
+											<div class="subMenu_titleArea">
+												<h3>girls</h3>
+												<ul class="subMenuList">
+													<li class="subMenuList_title">휠라 여성 아동 제품</li>
+													<li>
+														<a href="#none" title="여아의류">girl's clothes</a>
+													</li>
+													<li>
+														<a href="#none" title="여아신발">girl's shoes</a>
+													</li>
+													<li>
+														<a href="#none" title="여아가방">girl's bag</a>
+													</li>
+													<li>
+														<a href="#none" title="여아악세서리">girl's acc</a>
+													</li>
+												</ul>
+											</div>
+											<div class="subMenu_visualArea">
+												<div class="subMenu_visaul0">
+													<p class="subMenu_visual_img">
+														<a href="#none" title="newtrokids">
+															<img src="../img/subMenu_girls_visual0.jpg" alt="여아서브비쥬얼이미지0"/>
+														</a>
+													</p>
+												</div>
+												<div class="subMenu_visaul1">
+													<p class="subMenu_visual_img">
+														<a href="#none" title="snackTime">
+															<img src="../img/subMenu_girls_visual1.jpg" alt="여아서브비쥬얼이미지1"/>
+														</a>
+													</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="mainCate">
+							<a class="mainCate" href="#none" title="brand">BRAND</a>
+							<div class="subMenuWrap">
+								<div class="subMenu">
+									<div class="subMenu_brand">
+										<h3>brand</h3>
+										<ul class="subMenuList">
+											<li>
+												<a href="./fila_collabo.html" title="collabo">
+													<span class="brandImg"><img src="../img/collabo_subImg.jpg" alt="서브네비이미지0"/></span>
+													<span class="brandText">collabo</span>
+												</a>
+											</li>
+											<li>
+												<a href="./fila_heritage.html" title="heritage">
+													<span class="brandImg"><img src="../img/heritage_subImg.jpg" alt="서브네비이미지1"/></span>
+													<span class="brandText">heritage</span></a>
+											</li>
+											<li>
+												<a href="./fila_golf.html" title="golf">
+													<span class="brandImg"><img src="../img/golf_subImg.jpg" alt="서브네비이미지2"/></span>
+													<span class="brandText">golf</span></a>
+											</li>
+											<li>
+												<a href="./fila_kids.html" title="kids">
+													<span class="brandImg"><img src="../img/kids_subImg.jpg" alt="서브네비이미지3"/></span>
+													<span class="brandText">kids</span>
+												</a>
+											</li>
+											<li>
+												<a href="./fila_underwear.html" title="underwear">
+													<span class="brandImg"><img src="../img/underwear_subImg.jpg" alt="서브네비이미지4"/></span>
+													<span class="brandText">underwear</span>
+												</a>
+											</li>
+											<li>
+												<a href="./fila_milan.html" title="milan">
+													<span class="brandImg"><img src="../img/milan_subImg.jpg" alt="서브네비이미지5"/></span>
+													<span class="brandText">milan</span>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="mainCate">
+							<a class="mainCate" href="./fila_lookbook.html" title="lookbook">LOOKBOOK</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</header>
+		<div id="mobHeader">
+			<div id="mobNav">
+				<ul>
+					<li>
+						<a class="mobNavTitle" href="#none" title="mypage">MY PAGE</a>
+						<div class="mobSubNav">
+							<p>
+								<a href="./login.php" title="login">login</a>
+							</p>
+							<p>
+								<a href="./fila_qna.php" title="개인문의">1:1 문의</a>
+							</p>
+						</div>
+					</li>
+					<li>
+						<a class="mobNavTitle" href="#none" title="fila">fila</a>
+						<div class="mobSubNav">
+							<p>
+								<a href="./fila_intro.html" title="aboutFila">about fila</a>
+							</p>
+							<p>
+								<a href="./fila_history.html" title="history">history</a>
+							</p>
+						</div>
+					</li>
+					<li>
+						<a class="mobNavTitle" href="#none" title="men">MEN</a>
+						<div class="mobSubNav">
+							<p>
+								<a href="./fila_mensclothes.html" title="남성의류">men's clothes</a>
+							</p>
+							<p>
+								<a href="./fila_mensshoes.html" title="남성신발">men's shoes</a>
+							</p>
+							<p>
+								<a href="./fila_mensbag.html" title="남성가방">men's bag</a>
+							</p>
+							<p>
+								<a href="./fila_mensacc.html" title="남성악세서리">men's acc</a>
+							</p>
+						</div>
+					</li>
+					<li>
+						<a class="mobNavTitle" href="#none" title="women">WOMEN</a>
+						<div class="mobSubNav">
+							<p>
+								<a href="./fila_womensclothes.html" title="여성의류">women's clothes</a>
+							</p>
+							<p>
+								<a href="#none" title="여성신발">women's shoes</a>
+							</p>
+							<p>
+								<a href="#none" title="여성가방">women's bag</a>
+							</p>
+							<p>
+								<a href="#none" title="여성악세서리">women's acc</a>
+							</p>
+						</div>
+					</li>
+					<li>
+						<a class="mobNavTitle" href="#none" title="boys">BOYS</a>
+						<div class="mobSubNav">
+							<p>
+								<a href="#none" title="남아의류">boy's clothes</a>
+							</p>
+							<p>
+								<a href="#none" title="남아신발">boy's shoes</a>
+							</p>
+							<p>
+								<a href="#none" title="남아가방">boy's bag</a>
+							</p>
+							<p>
+								<a href="#none" title="남아악세서리">boy's acc</a>
+							</p>
+						</div>
+					</li>
+					<li>
+						<a class="mobNavTitle" href="#none" title="girls">GIRLS</a>
+						<div class="mobSubNav">
+							<p>
+								<a href="#none" title="여아의류">girl's clothes</a>
+							</p>
+							<p>
+								<a href="#none" title="여아신발">girl's shoes</a>
+							</p>
+							<p>
+								<a href="#none" title="여아가방">girl's bag</a>
+							</p>
+							<p>
+								<a href="#none" title="여아악세서리">girl's acc</a>
+							</p>
+						</div>
+					</li>
+					<li>
+						<a class="mobNavTitle" href="#none" title="brand">BRAND</a>
+						<div class="mobSubNav">
+							<p>
+								<a href="./fila_collabo.html" title="collabo">collabo</a>
+							</p>
+							<p>
+								<a href="./fila_heritage.html" title="heritage">heritage</a>
+							</p>
+							<p>
+								<a href="./fila_golf.html" title="golf">golf</a>
+							</p>
+							<p>
+								<a href="./fila_kids.html" title="kids">kids</a>
+							</p>
+							<p>
+								<a href="./fila_underwear.html" title="underwear">underwear</a>
+							</p>
+							<p>
+								<a href="./fila_milan.html" title="milan">milan</a>
+							</p>
+						</div>
+					</li>
+					<li>
+						<a class="mobNavTitle" href="./fila_lookbook.html" title="lookbook">LOOKBOOK</a>
+					</li>
+				</ul>
+			</div>
+			<div id="mobTitle">
+				<div id="cateArea">
+					<div id="cate">
+						<p class="cateFirst">
+							<span></span>
+						</p>
+						<p class="cateSec">
+							<span></span>
+						</p>
+						<p class="cateThird">
+							<span></span>
+						</p>
+					</div>
+				</div>
+				<div id="mobLogo">
+					<a href="../index.php" title="FILA"><img src="../img/fila_logo.png" alt="휠라로고"/></a>
+				</div>
+				<p id="searchMob">
+					<a href="#none" title="검색"><img src="../img/search_mob.png" alt="검색이미지"/></a>
+				</p>
+				<p id="my_shopping">
+					<a href="#none" title="shopping"><img src="../img/shopping_bag.png" alt="쇼핑백이미지"/></a>
+				</p>
+			</div>
+		</div>
+		<div id="container">
+			<h2>비쥬얼 및 섹션 영역</h2>
+			<div id="buyWrap">
+				<section id="buy">
+					<h2>구매 영역</h2>
+					<div class="productImg">
+						<p class="mainImg">
+							<img id="mainImg" src="../img/buyProductW2_W_thumb0.jpg" alt="구매메인이미지"/>
+						</p>
+						<ul id="thumbnailimgArea" class="thumbnail">
+							<li class="thum_on" onclick="thum0Click();">
+								<img id="thum0" src="../img/buyProductW2_W_thumb0.jpg" alt="썸네일이미지0"/>
+							</li>
+							<li onclick="thum1Click();">
+								<img id="thum1" src="../img/buyProductW2_W_thumb1.jpg" alt="썸네일이미지1"/>
+							</li>
+							<li onclick="thum2Click();">
+								<img id="thum2" src="../img/buyProductW2_W_thumb2.jpg" alt="썸네일이미지2"/>
+							</li>
+							<li onclick="thum3Click();">
+								<img id="thum3" src="../img/buyProductW2_W_thumb3.jpg" alt="썸네일이미지3"/>
+							</li>
+						</ul>
+						<p class="cardOnline">
+							<a href="#none" title="카드혜택 바로가기">
+								<img src="../img/card_online_info.jpg" alt="카드혜택이미지"/>
+							</a>
+						</p>
+					</div>
+					<div class="productText">
+						<form action="#none" method="get">
+							<fieldset>
+								<legend>제품구매영역</legend>
+								<div class="titleArea">
+									<div class="title">
+										<h3>에이스 롱다운 VER 2.0</h3>
+										<p class="likeBtn"><a href="#none" title="like"><img src="../img/heart_blank.png" alt="빈하트이미지"/></a></p>
+									</div>
+									<div class="review">
+										<p class="star"></p>
+										<a href="#none" title="리뷰">35개 리뷰 보기</a>
+									</div>
+									<p class="price">
+										<span>279,000</span>원
+									</p>
+								</div>
+								<div class="descArea">
+									<p class="card">
+										<span class="subTitle">추가혜택</span>
+										<span>
+											무이자 <button class="cardBtn" type="button">!</button><br/>
+											신규가입 쿠폰 10,000원 바로 사용가능<br/>
+											신용카드 25만원이상 결제 시 20,000원 즉시할인<br/>
+											PAYCO 최대 4,500원 할인
+										</span>
+									</p>
+									<div class="color">
+										<span class="subTitle">색상</span>
+										<ul>
+											<li><a class="on" href="#none" title="white"><img src="../img/white.png" alt="white"/></a></li>
+											<li><a href="#none" title="navy"><img src="../img/navy.png" alt="navy"/></a></li>
+											<li><a href="#none" title="black"><img src="../img/black.png" alt="black"/></a></li>
+										</ul>
+									</div>
+									<div class="sizeSelect">
+										<span class="subTitle">사이즈</span>
+										<select id="sizeWhite">
+											<option value="sizeTitle" selected="selected">size</option>
+											<option value="size80">80</option>
+											<option value="size85">85</option>
+											<option value="size90">90</option>
+											<option value="size95">95</option>
+											<option value="size100">100</option>
+											<option value="soldout">105 (sold out)</option>
+										</select>
+										<select id="sizeNavy">
+											<option value="sizeTitle" selected="selected">size</option>
+											<option value="size85">85</option>
+											<option value="size90">90</option>
+											<option value="size95">95</option>
+											<option value="size100">100</option>
+											<option value="soldout">105 (sold out)</option>
+										</select>
+										<select id="sizeBlack">
+											<option value="sizeTitle" selected="selected">size</option>
+											<option value="size80">80</option>
+											<option value="size85">85</option>
+											<option value="size90">90</option>
+											<option value="size95">95</option>
+											<option value="size100">100</option>
+											<option value="size105">105</option>
+											<option value="soldout">110 (sold out)</option>
+										</select>
+									</div>
+									<div class="number">
+										<span class="subTitle">갯수</span>
+										<p class="numBtnArea">
+											<input class="minus" type="button" value="-" title="minus" onclick="minusBtn();">
+											<input id="num" name="num" type="text" value="1" maxlength="2" title="갯수"/>
+											<input class="plus" type="button" value="+" title="plus" onclick="plusBtn();">
+										</p>
+									</div>
+								</div>
+								<div class="totalArea">
+									<p class="totalTitle">총 결제금액</p>
+									<p class="totalPrice"><input id="totPrice" name="totPrice" type="text" title="총결제금액"
+									value="279000" readonly/>원</p>
+								</div>
+								<div class="buttonArea">
+									<ul>
+										<li class="cart">
+											<input id="shoppingBtn" name="shoppingBtn" type="submit"
+											value="shopping cart" title="shoppingCart" onclick="shopping();"/>
+										</li>
+										<li class="buy">
+											<input id="buyBtn" name="buyBtn" type="submit"
+											value="buy now" title="buy버튼" onclick="buyNow();"/>
+										</li>
+									</ul>
+								</div>
+							</fieldset>
+						</form>
+					</div>
+				</section>
+			</div>
+			<div id="recoWrap">
+				<section id="reco">
+					<h2>추천 상품 영역</h2>
+					<div class="recoTitleArea">
+						<div class="recoTitle">
+							<h3>이 상품을 본 고객님들이 함께 본 상품</h3>
+						</div>
+						<p class="recoBtnArea">
+							<a class="left" href="#none" title="prev">
+								<img src="../img/left_button.png" alt="이전버튼이미지"/>
+							</a>
+							<a class="right" href="#none" title="next">
+								<img src="../img/right_button.png" alt="다음버튼이미지"/>
+							</a>
+						</p>
+					</div>
+					<div class="recoListWrap">
+						<div class="recoList">
+							<ul class="reco0">
+								<li>
+									<a href="#none" title="추천상품0">
+										<span class="recoImg"><img src="../img/recImg0.jpg" alt="추천이미지0"/></span>
+										<span class="recoText">FILA 크레마 보아 후드 플리스</span>
+										<span class="recoPrice"><b>79,000</b>원</span>
+									</a>
+								</li>
+								<li>
+									<a href="#none" title="추천상품1">
+										<span class="recoImg"><img src="../img/recImg1.jpg" alt="추천이미지1"/></span>
+										<span class="recoText">&lt;온라인단독&gt; 헤리티지 3단 블럭 푸퍼 구스 다운</span>
+										<span class="recoPrice"><b>179,000</b>원</span>
+									</a>
+								</li>
+								<li>
+									<a href="#none" title="추천상품2">
+										<span class="recoImg"><img src="../img/recImg2.jpg" alt="추천이미지2"/></span>
+										<span class="recoText">디스럽터 2</span>
+										<span class="recoPrice"><b>69,000</b>원</span>
+									</a>
+								</li>
+								<li>
+									<a href="#none" title="추천상품3">
+										<span class="recoImg"><img src="../img/recImg3.jpg" alt="추천이미지3"/></span>
+										<span class="recoText">에센셜 스몰 로고 맨투맨</span>
+										<span class="recoPrice"><b>49,000</b>원</span>
+									</a>
+								</li>
+								<li>
+									<a href="#none" title="추천상품4">
+										<span class="recoImg"><img src="../img/recImg4.jpg" alt="추천이미지4"/></span>
+										<span class="recoText">FILA 보아 후드</span>
+										<span class="recoPrice"><b>59,000</b>원</span>
+									</a>
+								</li>
+							</ul>
+							<ul class="reco1">
+								<li>
+									<a href="#none" title="추천상품5">
+										<span class="recoImg"><img src="../img/recImg5.jpg" alt="추천이미지5"/></span>
+										<span class="recoText">&lt;온라인단독&gt; 와펜 보아 집업</span>
+										<span class="recoPrice"><b>79,000</b>원</span>
+									</a>
+								</li>
+								<li>
+									<a href="#none" title="추천상품6">
+										<span class="recoImg"><img src="../img/recImg6.jpg" alt="추천이미지6"/></span>
+										<span class="recoText">&lt;온라인단독&gt; 리니어 보아 후드 집업</span>
+										<span class="recoPrice"><b>79,000</b>원</span>
+									</a>
+								</li>
+								<li>
+									<a href="#none" title="추천상품7">
+										<span class="recoImg"><img src="../img/recImg7.jpg" alt="추천이미지7"/></span>
+										<span class="recoText">헤리티지 베이직 리니어 집업 후드</span>
+										<span class="recoPrice"><b>69,000</b>원</span>
+									</a>
+								</li>
+								<li>
+									<a href="#none" title="추천상품8">
+										<span class="recoImg"><img src="../img/recImg8.jpg" alt="추천이미지8"/></span>
+										<span class="recoText">헤리티지 배색 헤비다운</span>
+										<span class="recoPrice"><b>219,000</b>원</span>
+									</a>
+								</li>
+								<li>
+									<a href="#none" title="추천상품9">
+										<span class="recoImg"><img src="../img/recImg9.jpg" alt="추천이미지9"/></span>
+										<span class="recoText">&lt;2019 NEW&gt; 테이피 숏다운</span>
+										<span class="recoPrice"><b>179,000</b>원</span>
+									</a>
+								</li>
+							</ul>
+							<ul class="reco2">
+								<li>
+									<a href="#none" title="추천상품10">
+										<span class="recoImg"><img src="../img/recImg10.jpg" alt="추천이미지10"/></span>
+										<span class="recoText">&lt;온라인단독&gt; 리버시블 숏다운 점퍼</span>
+										<span class="recoPrice sale"><span class="sale">179,000원</span><b>129,000</b>원</span>
+									</a>
+								</li>
+								<li>
+									<a href="#none" title="추천상품11">
+										<span class="recoImg"><img src="../img/recImg11.jpg" alt="추천이미지11"/></span>
+										<span class="recoText">&lt;온라인단독&gt; 부클 리니어 보아 후디</span>
+										<span class="recoPrice"><b>79,000</b>원</span>
+									</a>
+								</li>
+								<li>
+									<a href="#none" title="추천상품12">
+										<span class="recoImg"><img src="../img/recImg12.jpg" alt="추천이미지12"/></span>
+										<span class="recoText">쿼터 아노락 자켓</span>
+										<span class="recoPrice"><b>129,000</b>원</span>
+									</a>
+								</li>
+								<li>
+									<a href="#none" title="추천상품13">
+										<span class="recoImg"><img src="../img/recImg13.jpg" alt="추천이미지13"/></span>
+										<span class="recoText">펌프 체크다운</span>
+										<span class="recoPrice"><b>179,000</b>원</span>
+									</a>
+								</li>
+								<li>
+									<a href="#none" title="추천상품14">
+										<span class="recoImg"><img src="../img/recImg14.jpg" alt="추천이미지14"/></span>
+										<span class="recoText">FILA 팝콘 보아 플리스</span>
+										<span class="recoPrice"><b>99,000</b>원</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+			</div>
+			<div id="bannerWrap">
+				<section id="banner">
+					<h2>배너 영역</h2>
+					<p class="banner0">
+						<a href="#none" title="special_collaboration">
+							<img src="../img/19fw_banner0.jpg" alt="19FW배너이미지0"/>
+						</a>
+					</p>
+					<p class="banner1">
+						<a href="#none" title="19fw_collection">
+							<img src="../img/19fw_banner1.jpg" alt="19FW배너이미지1"/>
+						</a>
+					</p>
+				</section>
+			</div>
+			<div id="cateWrap">
+				<section id="cateTab">
+					<h2>카테고리 영역</h2>
+					<ul class="cateList">
+						<li><a class="on" href="#none" title="상품정보">상품정보</a></li>
+						<li><a href="#none" title="배송정보">배송 / 교환 / 반품안내</a></li>
+						<li><a href="#none" title="세탁방법">세탁방법 및 유의사항</a></li>
+					</ul>
+				</section>
+			</div>
+			<div id="descWrap">
+				<section id="descTab">
+					<h2>상품 설명 영역</h2>
+					<div class="descTitleArea">
+						<h3>상품 설명</h3>
+						<p class="descImg">
+							<img src="../img/fila_aceLong_detail.jpg" alt="에이스롱다운detail이미지"/>
+						</p>
+					</div>
+					<div class="detailArea">
+						<p class="detailText">
+							<strong>FILA 에이스2.0 구스 롱다운</strong><br/>
+							소프트한 터치감의 소재와 구스다운 충전재를 사용하여 보온성이 뛰어난 제품<br/>
+							무릎 밑까지 내려오는 기장의 레귤러핏 롱다운<br/>
+							등뒤 FILA BIELLA ITALIA 3D로고를<br/>
+							자수기법으로 적용하여 트렌디한 디자인이 돋보이는 제품<br/>
+							앞여밈 밑부분 부분적 자석스냅을 사용하여 겨울 방풍기능을 극대화한 제품<br/>
+							안쪽 주머니 무선 블루투스 이어폰 주머니가 별도로 있어 수납이 용이한 제품
+						</p>
+						<p class="detail_img">
+							<span class="detail0">
+								<img src="../img/buyProductW2_W_thumb0.jpg" alt="디테일이미지0"/>
+							</span>
+							<span class="detail1">
+								<img src="../img/buyProductW2_W_thumb1.jpg" alt="디테일이미지1"/>
+							</span>
+							<span class="detail2">
+								<img src="../img/buyProductW2_W_thumb2.jpg" alt="디테일이미지2"/>
+							</span>
+							<span class="detail3">
+								<img src="../img/buyProductW2_W_thumb3.jpg" alt="디테일이미지3"/>
+							</span>
+							<span class="detail4">
+								<img src="../img/buyProductW2_W_thumb4.jpg" alt="디테일이미지4"/>
+							</span>
+							<span class="detail5">
+								<img src="../img/buyProductW2_W_thumb5.jpg" alt="디테일이미지5"/>
+							</span>
+						</p>
+						<div class="size_info">
+							<h3>상품 사이즈 정보</h3>
+							<p class="centi">단위 : cm</p>
+							<div class="sizeTable">
+								<ul class="size">
+									<li class="title">사이즈</li>
+									<li>85</li>
+									<li>90</li>
+									<li>95</li>
+									<li>100</li>
+									<li>105</li>
+									<li>110</li>
+								</ul>
+								<ul class="totLeng">
+									<li class="title">총기장</li>
+									<li>110</li>
+									<li>112</li>
+									<li>116</li>
+									<li>118</li>
+									<li>120</li>
+									<li>122</li>
+								</ul>
+								<ul class="shoulder">
+									<li class="title">어깨</li>
+									<li>43</li>
+									<li>45</li>
+									<li>47</li>
+									<li>49</li>
+									<li>51</li>
+									<li>53.5</li>
+								</ul>
+								<ul class="chest">
+									<li class="title">가슴둘레</li>
+									<li>112</li>
+									<li>117</li>
+									<li>122</li>
+									<li>127</li>
+									<li>132</li>
+									<li>138</li>
+								</ul>
+								<ul class="arm">
+									<li class="title">팔길이</li>
+									<li>62</li>
+									<li>63</li>
+									<li>64</li>
+									<li>65</li>
+									<li>66</li>
+									<li>67.2</li>
+								</ul>
+							</div>
+						</div>
+						<div class="product_info">
+							<h3>상품 정보 보기</h3>
+							<div class="infoTable">
+								<ul class="title_table">
+									<li>상품명</li>
+									<li>상품 코드</li>
+									<li>제품 소재</li>
+									<li>색상</li>
+									<li>사이즈</li>
+									<li>제조국</li>
+									<li>제조년월</li>
+									<li>제조사</li>
+									<li title="세탁방법 및 취급시 주의사항">세탁방법 및 취급시 주의사항</li>
+									<li>품질보증기준</li>
+									<li title="A/S 책임자와 전화번호">A/S 책임자와 전화번호</li>
+								</ul>
+								<ul class="desc_table">
+									<li>에이스 롱다운 VER 2.0</li>
+									<li>FS2DJB4003X</li>
+									<li title="겉감:폴리에스테르100%안감:폴리에스테르100%충전재: 거위솜털80% 거위깃털20%우모량: 410g(100사이즈 기준)">
+										겉감:폴리에스테르100%안감:폴리에스테르100%충전재: 거위솜털80% 거위깃털20%우모량: 410g(100사이즈 기준)
+									</li>
+									<li>OWH(오프 화이트)</li>
+									<li>85, 90, 95, 100, 105, 110</li>
+									<li>베트남</li>
+									<li>2019.06</li>
+									<li>휠라코리아㈜</li>
+									<li>상세 취급방법 제품라벨 참조</li>
+									<li>관련법 및 소비자 분쟁해결기준에 따름</li>
+									<li>휠라코리아㈜ 온라인 고객센터 1577-3472</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section id="delivTab">
+					<h2>배송안내 영역</h2>
+					<div class="deliv">
+						<dl class="deliv_left">
+							<dt>배송사</dt>
+							<dd>CJ택배 1588-1255</dd>
+							<dt>배송기간</dt>
+							<dd>
+								결제일 기준 3~5일 소요됩니다. (토,일,공휴일 제외)<br/>
+								물류센터 재고 부족시 5~7일 소요됩니다. (토,일,공휴일 제외)
+							</dd>
+							<dt>배송지역</dt>
+							<dd>전국배송가능 (제주도, 기타 도서산간지역은 별도의 요금이 부과됩니다.)</dd>
+							<dt>배송비</dt>
+							<dd>
+								<b>50,000원 이상 구매시 배송비 무료</b><br/>
+								50,000원 미만 구매시 배송비 2,500원<br/>
+								(제주도 3,000원, 도서산간 5.000원 추가 배송비 발생)
+							</dd>
+							<dt>A/S안내</dt>
+							<dd>
+								<b>품질보증 및 보상기준 : 휠라코리아㈜ 제품의 품질보증기간은 구입일로부터 1년 입니다.</b><br/>
+								제품의 불량에 의한 반품, 교환, A/S 등은 공정거래위원회에서 고시한<br/>
+								소비자분쟁해결기준에 따라 반품, 교환, A/S를 받을 수 있습니다.<br/>
+								휠라코리아(주) A/S 고객지원실 의류 080-022-2468, 신발 080-051-2222
+							</dd>
+							<dt>업무시간</dt>
+							<dd>
+								오전 9시 ~ 오후 6시 (점심시간 : 오전 12시 ~ 오후 1시)<br/>
+								토, 일, 법정공휴일, 휴무일은 휴무로 고객센터 운영이 되지 않습니다.
+							</dd>
+						</dl>
+						<dl class="deliv_right">
+							<dt>교환/반품비</dt>
+							<dd>
+								교환/반품시 <b>배송비 5,000원</b> 부과 (제주도, 도서산간지역 추가배송비 발생)
+							</dd>
+							<dt>교환/반품 주소지</dt>
+							<dd>
+								<b>경기로 부천시 송내대로 30번길 13 CJ 대한통운 부천지점</b>
+							</dd>
+							<dt>교환 / 반품 시 유의사항</dt>
+							<dd>
+								<ul>
+									<li>제품수령 후 7일 이내에 착용하지 않은 상품일 경우 교환/반품이 가능합니다.</li>
+									<li>맞교환은 불가능하며, 상품이 물류센터에 도착하면 요청하신 교환 상품이 배송됩니다.</li>
+									<li>다른 상품으로 교환을 원하실 경우, 기존 상품 반품 후 재주문을 해주셔야 합니다.</li>
+									<li>지정된 택배사 이외 임의의 택배사 착불로 제품을 보내실 경우 반송될 수 있는 점 양해 바랍니다.</li>
+									<li>단순 변심으로 인한 교환/반품 요청시 배송비는 고객님 부담입니다.</li>
+									<li>제품의 불량, 오배송, 기타문제로 교환/반품시 택배비는 휠라코리아에서 부담, 처리해 드립니다.</li>
+								</ul>
+							</dd>
+							<dt>교환 / 반품이 불가능한 경우</dt>
+							<dd>
+								<ul>
+									<li>고객님의 단순변심으로 인한 교환/반품 요청이 상품을 수령한 날로부터 7일을 경과한 경우</li>
+									<li>고객님의 과실로 상품의 가치가 현저히 상실 된 경우</li>
+									<li>상품의 구성품을 분실하였거나 취급 부주의로 인한 파손, 고장, 오염된 경우</li>
+									<li>상품의 고유포장(택,박스,상품스티커,상품케이스) 등을 훼손 및 분실하여 재판매가 불가능한 경우</li>
+									<li>상품을 사용하였거나 상품 일부를 소비하였을 경우</li>
+									<li>상품 특성상 측정방법에 따라 표기된 사이즈의 오차가 있을 수 있으며, 이로 인한 반품 및 교환은 제한될 수 있습니다.</li>
+									<li>모니터 해상도의 차이로 인해 색상이나 이미지가 실제와 다를수 있으며, 이로 인한 반품 및 교환이 제한될 수 있습니다.</li>
+									<li>기타, '전자상거래 등에서의 소비자 보호에 관한 법률'에 희한 청약철회 제한사유에 해당되는 경우</li>
+								</ul>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section id="washTab">
+					<h2>세탁방법 영역</h2>
+					<h3>사용 전 주의사항은 제품에 붙은 안내 택을 반드시 참고하여 주시기 바랍니다.</h3>
+					<div class="wash">
+						<ul class="shoes">
+							<li class="wash_title">신발</li>
+							<li class="shodes_desc">
+								<dl>
+									<dt>천연가죽</dt>
+									<dd>
+										* 반드시 가죽보혁유(슈크림)로 손질하고 물세척을 해서는 안됩니다.<br/>
+										* 부득이한 경우 미지근한 비눗물을 헝겊에 적셔 제품의 겉표면을 가볍게 닦아 주십시오.<br/>
+										* 건조시 직사광선, 화기, 난방기는 제품의 색상, 변형을 이으키므로 반드시 통풍이 잘되는 응달에서 완전 건조후 착화하여 주십시요.<br/>
+										* 보관시 직사광선, 고온, 다습한 곳을 피해주시고 제품의 형태를 유지하여 통풍이 잘되는 곳에 보관하여 주십시오.
+									</dd>
+									<dt>합성(인조)가죽</dt>
+									<dd>
+										* 오염 제거시 미지근한 비눗물을 헝겊에 적셔 제품의 겉표면을 가볍게 닦아주십시오.<br/>
+										* 부득이한 경우 흐르는 물로 손세탁하여 주시고 세탁기, 탈수기 및 표백제 사용을 금해 주십시요.<br/>
+										* 건조시 직사광선, 화기, 난방기는 제품의 색상, 변형을 일으키므로 반드시 통풍이 잘되는 응달에서 완전 건조후 착화하여 주십시요.<br/>
+										* 보관시 직사광선, 고온, 다습한 곳을 피해주시고 제품의 형태를 유지하여 통풍이 잘되는 곳에 보관하여 주십시오.
+									</dd>
+									<dt>샌달</dt>
+									<dd>합성(인조)가죽과 내용 동일</dd>
+								</dl>
+							</li>
+							<li class="shodes_desc">
+								<dl>
+									<dt>면, 메쉬</dt>
+									<dd>
+										* 오염 제거시 미지근한 비눗물로 손세탁 하고, 세탁기, 탈수기 및 표백제 사용을 금해 주십시요.<br/>
+										* 흰색상 제품은 햇빛, 광선에 의한 황변 및 세척시 황변현상이 생길 수 있사오니 맑은 물에 완전히 헹구어 주십시오.<br/>
+										* 건조시 직사광선, 화기, 난방기는 제품의 색상, 변형을 일으키므로 반드시 통풍이 잘되는 응달에서 완전 건조후 착화하여 주십시요.<br/>
+										* 보관시 직사광선, 고온, 다습한 곳을 피해주시고 제품의 형태를 유지하여 통풍이 잘되는 곳에 보관하여 주십시오.
+									</dd>
+									<dt>스프리트</dt>
+									<dd>
+										* 오염 제거시 깨끗한 솔로 겉표면의 먼지를 깨끗하게 털어 주십시오.<br/>
+										* 뉴박소재의 경우, 지우개로 오염부위를 제거 하신 후 솔로 표면을 한번 더 깨끗하게 털어주십시오.<br/>
+										* 땀이나 우천시 빗물에 장시간 노출될 경우 물빠짐으로 양말 등이 오염될 수 있으므로 백색의 양말 착용을 금해주십시오.<br/>
+										* 보관시 직사광선, 고온, 다습한 곳을 피해주시고 제품의 형태를 유지하여 통풍이 잘되는 곳에 보관하여 주십시오.
+									</dd>
+								</dl>
+							</li>
+						</ul>
+						<ul class="clothes">
+							<li class="wash_title">의류(공통)</li>
+							<li>
+								* 본 제품은 원단 특성상 반드시 단독 세탁 하시기 바랍니다.<br/>
+								* 본 제품은 수분에 의해 이염될 수 있으니 젖은 의류를 담는 것을 삼가시고 건조한 상태로 유지하여 주십시오.<br/>
+								* 본 제품은 나일론스판 원단 특성상 보관 중 황변 현상이 발생하기 쉬운 소재이므로 열, 빛, 화학약품,<br/>
+								밀폐된 공간에서의 장시간 보관을 피해주시고 건조한 상태로 환기가 잘되는 곳에 보관 바랍니다. 특히, 직사광선이나 매장조명에 오랜 시간 노출되지 않도록 주의바랍니다.<br/>
+								* 세탁시 드라이클리닝, 온수, 열풍건조 세탁기 사용은 삼가해 주십시오.<br/>
+								* 본 제품은 기계건조 (열풍건조)에 의해 손상될 수 있으니 삼가해 주십시오.<br/>
+								* 본 제품은 원단 특성상 올뜸김이 발생될 수 있으므로 반드시 단독세탁 하시기 바랍니다.<br/>
+								* 본 제품은 제품 특성상 세탁 후 물빠짐 현상이 떨어질 수 있사오니 세탁 후 반드시 뒤집어서 건조하여 주십시오.
+							</li>
+						</ul>
+						<ul class="acc">
+							<li class="wash_title">용품(공통)</li>
+							<li>
+								* 표백제 및 강력효소제는 절대 사용하지 마십시오.<br/>
+								* 드라이 클리닝을 하지 마십시오.<br/>
+								* 화기에 주의해 주십시오.<br/>
+								* 다림질을 하지 마십시오.<br/>
+								* 물세탁이 가능한 소재는 30℃ 이하의 물에서 손세탁 하십시오. 단 , 물에 오래 담가두지 마시고 즉시 세탁해 주십시오.<br/>
+								* 짙은 색상의 제품은 다른 색상의 제품과 분리 또는 단독 세탁해 주십시오.<br/>
+								* 가죽 소재는 가죽 전용 클리너를 사용해 주십시오.<br/>
+								* 화기에 주의해 주십시오.
+							</li>
+						</ul>
+						<ul class="under">
+							<li class="wash_title">남성물/여성물 속옷류</li>
+							<li>
+								* 본제품은 원단 특성상 반드시 단독 손세탁을 권장하며, 세탁기 사용시 세탁망에 넣어 세탁 하시기 바랍니다.<br/>
+								* 세탁시 드라이클리닝, 온수, 열풍건조 세탁기 사용은 삼가해 주십시오.<br/>
+								* 염소 산소표백을 삼가해 주시고 물에 오랜시간(30분 이상) 동안 담가두지 마십시오.<br/>
+								* 짙은 색상과 연한 색상의 옷은 반드시 분리하여 세탁해 주십시오.<br/>
+								* 물이나 땀이 밴 경우에는 싞속히 세탁해 주십시오.<br/>
+								* 악세서리(금속)부착 제품은 물세탁 후 녹이 발생하며 피부 알러지가 발생할 수 있으니 주의바랍니다.<br/>
+								* 소재나 색상이 서로 달라 혼합된 제품일 때는 이염될 우려가 있으니 빠른 시간 내에 세탁 및 건조해 주십시오.<br/>
+								* 특별한 원단 소재에 따라 올뜯김, 호일 탈락 현상이 발생할 수 있으므로 단독세탁 하시기 바랍니다.
+							</li>
+						</ul>
+						<ul class="pajama">
+							<li class="wash_title">파자마, 란제리류</li>
+							<li>
+								* 본 제품은 원단 특성 상 반드시 중성세제를 사용하여 단독 물세탁 하시기 바랍니다.<br/>
+								* 세탁시 드라이클리닝, 온수, 열풍건조 세탁기 사용은 삼가해 주십시오.<br/>
+								* 염소 산소표백을 삼가해 주시고 물에 오랜시간(30분 이상) 동안 담가두지 마십시오.<br/>
+								* 프린트나 장식물 부위는 다림질을 삼가해 주십시오.<br/>
+								* 짙은 색상과 연한 색상의 옷은 반드시 분리하여 세탁해 주십시오.<br/>
+								* 소재나 색상이 서로 달라 혼합된 제품일 때는 이염될 우려가 있으니 빠른 시간 내에 세탁 및 건조해 주십시오.<br/>
+								* 특별한 원단 소재에 따라 올뜯김, 호일 탈락 현상이 발생할 수 있으므로 단독세탁 하시기 바랍니다.
+							</li>
+						</ul>
+					</div>
+				</section>
+			</div>
+			<p class="topBtn">
+				<a href="#none" title="위로가기"><img src="../img/topBtn.png" alt="위로가기버튼이미지"/></a>
+			</p>
+		</div>
+		<footer id="footerWrap">
+			<h2>푸터영역</h2>
+			<div id="footer">
+				<div class="top_footer">
+					<div id="logo">
+						<h2>fila푸터로고</h2>
+						<img src="../img/fila_footer_logo.png" alt="fila_logo이미지"/><span class="down">▼</span>
+					</div>
+					<p class="mobAddress">
+						서울시 강동구 천호대로 1077<br/>
+						이스트센트럴타워 16층 휠라코리아(주) <i>|</i> 대표이사 : 윤근창<br/>
+						법인명(상호명) 휠라코리아(주)<br/>
+						통신판매업신고 서초 제 2001-00873호<br/>
+						사업자등록번호 114-81-44271 <i>|</i> 개인정보 관리책임자 권창호<br/>
+						대표전화 : 1577-3472 <i>|</i> <a href="#none" title="fila문의메일" style="color:#CC393C;">filaonline@fila.com</a>
+					</p>
+					<ul class="topMenu_footer">
+						<li>
+							<div>
+								<h4>ABOUT FILA</h4>
+								<p>
+									<a href="#none" title="브랜드연혁">브랜드 연혁</a>
+								</p>
+								<p>
+									<a href="#none" title="CEO인사말">CEO 인사말</a>
+								</p>
+								<p>
+									<a href="#none" title="contact_us">CONTACT US</a>
+								</p>
+							</div>
+						</li>
+						<li>
+							<div>
+								<h4>RECRUIT</h4>
+								<p>
+									<a href="#none" title="채용게시판">채용게시판</a>
+								</p>
+								<p>
+									<a href="#none" title="채용결과">채용결과</a>
+								</p>
+							</div>
+						</li>
+						<li>
+							<div>
+								<h4>IR</h4>
+								<p>
+									<a href="#none" title="korea">KOREA</a>
+								</p>
+								<p>
+									<a href="#none" title="english">ENGLISH</a>
+								</p>
+							</div>
+						</li>
+						<li>
+							<div>
+								<h4>ETHICS</h4>
+								<p>
+									<a href="#none" title="윤리경영">윤리경영</a>
+								</p>
+								<p>
+									<a href="#none" title="윤리규범">윤리규범</a>
+								</p>
+								<p>
+									<a href="#none" title="윤리규범실천서약">윤리규범실천서약</a>
+								</p>
+								<p>
+									<a href="#none" title="거래윤리준칙">거래윤리준칙</a>
+								</p>
+								<p>
+									<a href="#none" title="실천프로그램">실천프로그램</a>
+								</p>
+								<p>
+									<a href="#none" title="제보센터">제보센터</a>
+								</p>
+							</div>
+						</li>
+						<li>
+							<div>
+								<h4>ATHLETES</h4>
+								<p>
+									<a href="#none" title="korean_team">KOREAN TEAM</a>
+								</p>
+								<p>
+									<a href="#none" title="global_team">GLOBAL TEAM</a>
+								</p>
+							</div>
+						</li>
+						<li>
+							<div>
+								<h4>CONTACT US</h4>
+								<p>
+									<a href="#none" title="매장안내">매장안내</a>
+								</p>
+								<p>
+									<a href="#none" title="as안내조회">A/S 안내조회</a>
+								</p>
+								<p>
+									<a href="#none" title="대리점개설문의">대리점개설문의</a>
+								</p>
+								<p>
+									<a href="#none" title="fila_one_멤버십">FILA ONE 멤버십</a>
+								</p>
+								<p>
+									<a href="#none" title="위니프렌즈소개">위니프렌즈 소개</a>
+								</p>
+								<p>
+									<a href="#none" title="문의하기">문의하기</a>
+								</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="bottom_footer">
+					<ul class="bottomMenu_footer">
+						<li>
+							<a href="#none" title="통합회원">통합회원</a>
+						</li>
+						<li>
+							<a href="#none" title="이용약관">이용약관</a>
+						</li>
+						<li>
+							<a class="bold" href="#none" title="개인정보처리방침">개인정보 처리방침</a>
+						</li>
+						<li>
+							<a href="#none" title="사업자정보확인"><b>사업자 정보 확인</b></a>
+						</li>
+						<li>
+							<a href="#none" title="공지사항">공지사항</a>
+						</li>
+						<li>
+							<a href="#none" title="faq">FAQ</a>
+						</li>
+						<li>
+							<a href="#none" title="고객센터">고객센터</a>
+						</li>
+					</ul>
+					<ul class="snsMenu_footer">
+						<li>
+							<a href="#none" title="페이스북">
+								<i><img src="../img/icon_fb.png" alt="페이스북아이콘이미지"/></i>
+							</a>
+						</li>
+						<li>
+							<a href="#none" title="인스타그램">
+								<i><img src="../img/icon_ins.png" alt="인스타그램아이콘이미지"/></i>
+							</a>
+						</li>
+						<li>
+							<a href="#none" title="유튜브">
+								<i><img src="../img/icon_youtube.png" alt="유튜브아이콘이미지"/></i>
+							</a>
+						</li>
+						<li>
+							<a href="#none" title="트위터">
+								<i><img src="../img/icon_twitter.png" alt="트위터아이콘이미지"/></i>
+							</a>
+						</li>
+						<li>
+							<a href="#none" title="카카오스토리">
+								<i><img src="../img/icon_kakao.png" alt="카카오스토리아이콘이미지"/></i>
+							</a>
+						</li>
+					</ul>
+					<div class="lang_contentArea">
+						<p class="langArea">
+							<select id="lang" title="언어선택">
+								<option value="kor" selected="selected">korean</option>
+								<option value="eng">english</option>
+								<option value="chn">chinese</option>
+							</select>
+							<i>|</i>
+						</p>
+						<div class="content_info">
+							<p class="content_info_text">
+								콘텐츠산업진흥법에 의한 콘텐츠보호안내
+							</p>
+							<div>
+								<a class="detail" href="#none" title="자세히보기"><b>[자세히보기]</b></a>
+							</div>
+						</div>
+					</div>
+					<div id="address">
+						<address>
+							서울시 강동구 천호대로 1077 이스트센트럴타워 16층 휠라코리아(주) <i>|</i> 대표이사 : 윤근창 <i>|</i> 법인명(상호명) 휠라코리아(주) <i>|</i> 통신판매업신고 서초 제 2001-00873호<br/>
+							사업자등록번호 114-81-44271 <i>|</i> 개인정보 관리책임자 권창호 <i>|</i> 대표전화 : 1577-3472 <i>|</i> <a href="#none" title="fila문의메일" style="color:#CC393C;">filaonline@fila.com</a>
+						</address>
+					</div>
+					<p class="info">
+						본 사이트의 상품이미지 저작권은 휠라코리아(주)에 있으며, 내용의 무단복제를 금합니다.
+					</p>
+					<p id="copyright">
+						COPYRIGHT © 2020 HYEONGWOO JANG ALL RIGHTS RESERVED.
+					</p>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<div class="card_tooltip">
+		<h3>카드 무이자 할부 안내</h3>
+		<h4>카드사 무이자 할부 (01.01 ~ 01.31)</h4>
+		<ul>
+			<li>
+				<p class="cardName">KB국민카드</p>
+				<p class="money">5만원 이상</p>
+				<p class="period">2~5개월</p>
+			</li>
+			<li>
+				<p class="cardName">씨티카드</p>
+				<p class="money">5만원 이상</p>
+				<p class="period">2~6개월</p>
+			</li>
+			<li>
+				<p class="cardName">하나카드</p>
+				<p class="money">5만원 이상</p>
+				<p class="period">2~6개월</p>
+			</li>
+			<li>
+				<p class="cardName">BC카드</p>
+				<p class="money">5만원 이상</p>
+				<p class="period">2~6개월</p>
+			</li>
+			<li>
+				<p class="cardName">NH농협카드</p>
+				<p class="money">5만원 이상</p>
+				<p class="period">2~6개월</p>
+			</li>
+			<li>
+				<p class="cardName">삼성카드</p>
+				<p class="money">5만원 이상</p>
+				<p class="period">2~6개월</p>
+			</li>
+			<li>
+				<p class="cardName">현대카드</p>
+				<p class="money">5만원 이상</p>
+				<p class="period">2~6개월</p>
+			</li>
+			<li>
+				<p class="cardName">신한카드</p>
+				<p class="money">5만원 이상</p>
+				<p class="period">2~5개월</p>
+			</li>
+		</ul>
+	</div>
+	<p class="content_info_img">
+		<img src="../img/fila_content_info.jpg" alt="휠라컨텐츠보호안내이미지"/>
+	</p>
+ </body>
+</html>

@@ -1,0 +1,1 @@
+if(window.attachEvent){alert("구형브라우저입니다. IE 9버전 이상으로 업데이트 후 재방문 부탁드립니다.");}

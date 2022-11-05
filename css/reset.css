@@ -1,0 +1,7 @@
+/*########## reset ##########*/
+	*{margin:0; padding:0;}
+	body, header, nav, section, footer, div, p, ul, ul li{margin:0; padding:0;}
+	header, nav, section, footer{display:block;}
+	li{list-style-type:none;}
+	img{border:none;}
+	a:link, a:visited{text-decoration:none; color:#000;}

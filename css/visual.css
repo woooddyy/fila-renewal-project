@@ -1,0 +1,16 @@
+/*########## visualWrap ##########*/
+	#visualWrap, #visual, #screen{width:100%;}
+	#visualWrap{margin-bottom:50px;}
+	#screen{position:relative; overflow:hidden;}
+	#film{width:400%;}
+	#film .scene{width:25%; float:left;}
+	#film .scene a{display:block; width:100%;}
+	#film .scene img{width:100%;}
+
+	#screen #btn p{width:40px; height:40px; border-radius:20px; background-color:rgba(100,100,100,.6);
+		background-repeat:no-repeat; background-image:url("../img/visualBtn.png"); position:absolute;
+		top:50%; transform:translatey(-50%); cursor:pointer;}
+	#screen #btn .prev{background-position:0 -40px; left:2%;}
+	#screen #btn .next{background-position:0 0; right:2%;}
+
+	#film:after{content:""; display:block; clear:both;}

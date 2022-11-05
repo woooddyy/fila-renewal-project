@@ -1,0 +1,69 @@
+$(document).ready(function(){
+	$(window).scroll(function(){
+		var nowScroll=$(document).scrollTop();
+		var blueBar=$("#historyArea .middleP p");
+		console.log($("body").width());
+		if($("body").width()>1007){
+			if(nowScroll>0){
+				blueBar.css({"height":"200px"});
+				$(".h2019, .h2009, .h1999, .h1980").animate({"opacity":1},300);
+				if(nowScroll>300){
+					blueBar.css({"height":"400px"});
+					$(".h2018,.h2008,.h1998,.h1970").animate({"opacity":1},300);
+					$(".h2017,.h2007,.h1997").delay(300).animate({"opacity":1},300);
+					if(nowScroll>600){
+						blueBar.css({"height":"600px"});
+						$(".h2016,.h2006,.h1996,.h1900").animate({"opacity":1},300);
+						$(".h2015,.h2005,.h1995").delay(300).animate({"opacity":1},300);
+						if(nowScroll>900){
+							blueBar.css({"height":"900px"});
+							$(".h2014,.h2004,.h1994").animate({"opacity":1},300);
+							$(".h2013,.h2003,.h1993").delay(300).animate({"opacity":1},300);
+							if(nowScroll>1200){
+								blueBar.css({"height":"1200px"});
+								$(".h2012,.h2002,.h1992").animate({"opacity":1},300);
+								$(".h2011,.h2001,.h1991").delay(300).animate({"opacity":1},300);
+								if(nowScroll>1500){
+									blueBar.css({"height":"100%"});
+									$(".h2010,.h2000,.h1990").animate({"opacity":1},300);
+								}
+							}
+						}
+					}
+				}
+			}
+			else{blueBar.css({"height":0});}
+		}
+		else if($("body").width()<1008){
+			if(nowScroll>0){
+				blueBar.css({"height":"250px"});
+				$(".h2019, .h2009, .h1999, .h1980").animate({"opacity":1},300);
+				if(nowScroll>200){
+					blueBar.css({"height":"500px"});
+					$(".h2018,.h2008,.h1998,.h1970").animate({"opacity":1},300);
+					$(".h2017,.h2007,.h1997").delay(300).animate({"opacity":1},300);
+					if(nowScroll>400){
+						blueBar.css({"height":"770px"});
+						$(".h2016,.h2006,.h1996,.h1900").animate({"opacity":1},300);
+						$(".h2015,.h2005,.h1995").delay(300).animate({"opacity":1},300);
+						if(nowScroll>600){
+							blueBar.css({"height":"1150px"});
+							$(".h2014,.h2004,.h1994").animate({"opacity":1},300);
+							$(".h2013,.h2003,.h1993").delay(300).animate({"opacity":1},300);
+							if(nowScroll>800){
+								blueBar.css({"height":"1420px"});
+								$(".h2012,.h2002,.h1992").animate({"opacity":1},300);
+								$(".h2011,.h2001,.h1991").delay(300).animate({"opacity":1},300);
+								if(nowScroll>1000){
+									blueBar.css({"height":"100%"});
+									$(".h2010,.h2000,.h1990").animate({"opacity":1},300);
+								}
+							}
+						}
+					}
+				}
+			}
+			else{blueBar.css({"height":0});}
+		}
+	});
+});

@@ -1,0 +1,1380 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+  <title>COLLABO | FILA</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="../js/mainNav.js"></script>
+  <script src="../js/mobNav.js"></script>
+  <script src="../js/mypageSlide.js"></script>
+  <script src="../js/topBtn.js"></script>
+  <script src="../js/footer.js"></script>
+  <link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+  <link rel="stylesheet" type="text/css" href="../css/bodyFont.css"/>
+  <link rel="stylesheet" type="text/css" href="../css/headerWrap.css"/>
+  <link rel="stylesheet" type="text/css" href="../css/topBtn.css"/>
+  <link rel="stylesheet" type="text/css" href="../css/footerWrap.css"/>
+  <style>
+	/*########## 공통영역 ##########*/
+		#wrap{width:100%; max-width:1920px; margin:0 auto;}
+		h1, h2{position:absolute; left:-9999px; font-size:1px; width:1px; height:1px; line-height:0; overflow:hidden;}
+		.content_info_img{width:595px; height:233px; position:absolute; left:0; top:0;}
+	
+	/*########## container ##########*/
+		#container{width:100%;}
+
+	/*########## visualWrap ##########*/
+		#visualWrap{width:100%; height:300px; background-color:rgba(0,0,0,.6);
+			background-image:url("../img/collaboVisual.png"); background-repeat:no-repeat;
+			background-attachment:fixed; background-position:center top;}
+		#visual, #visual h3{width:100%; text-align:center; font-size:50px; line-height:300px; text-transform:uppercase; color:#fff;}
+
+	/*########## contentWrap / content_now ##########*/
+		#contentWrap{width:100%; text-transform:uppercase;
+			background-image:-webkit-linear-gradient(right, #05C475, #148FAD);
+			background-image:-moz-linear-gradient(right, #05C475, #148FAD);
+			background-image:-ms-linear-gradient(right, #05C475, #148FAD);
+			background-image:-o-linear-gradient(right, #05C475, #148FAD);}
+		#content_now{width:100%;  padding:80px 0 100px; position:relative;}
+		#content_now .content_now_bg{width:0; height:566px; overflow:hidden; position:absolute; left:0; top:100px;
+			transition:width .5s linear;}
+
+		/*기능 적용 : 마우스 올리면 배경 펼쳐지기*/
+		#content_now:hover .content_now_bg{width:100%;}
+
+		#content_now .now{width:1200px; height:566px; margin:0 auto;}
+		#content_now a{display:block; width:100%; height:100%; color:#fff;}
+		#content_now a .now_img{display:block; width:400px; height:100%; padding:0 100px; float:left;
+			transform:scale(1); transition:transform .2s linear;}
+		#content_now a .now_img img{width:100%;}
+
+		/*기능 적용 : 마우스 올리면 이미지 확대*/
+		#content_now:hover .now_img{transform:scale(1.05);}
+
+		/*##### now_desc #####*/
+		#content_now a .now_desc{display:block; width:500px; height:296px; margin:135px 50px; float:left;		 
+			position:relative;}
+		#content_now a .now_desc b{display:block; background-color:#fff; padding:5px; font-size:26px;
+			height:45px; line-height:45px; color:#05C475; letter-spacing:-1px; width:150px; text-align:center;
+			border-radius:5px; margin-bottom:30px; opacity:1; animation:lighting 1s infinite alternate;}
+
+		@keyframes lighting{
+			0%{opacity:1;}
+			100%{opacity:0.5;}
+		}
+		#content_now a .now_desc em{font-style:normal; display:block; width:100%; font-size:33px;
+			line-height:45px;}
+		#content_now a .now_desc strong{display:block; width:100%; font-size:50px; padding:10px 0 35px;
+			line-height:50px;}
+		#content_now a .now_desc .desc{color:#befff3;}
+		#content_now a .now_desc .btn{display:block; width:50px; height:50px; 
+			position:absolute; right:0; top:0;
+			transform:rotate(0deg); transition:transform .3s ease-in-out;}
+		#content_now a .now_desc .btn img{width:100%; height:100%;}
+
+		/*기능 적용 : 버튼에 마우스 올리면 회전*/
+		#content_now a .now_desc .btn:hover{transform:rotate(90deg);}
+
+	/*########## contentWrap / content_list_first + content_list_sec ##########*/
+		#content_list_first, #content_list_first ul,
+		#content_list_sec, #content_list_sec ul{width:100%;}
+		#content_list_first li, #content_list_sec li{width:50%; height:620px; position:relative; float:left;}
+
+		/* 각 구간 배경색상 설정 */
+		#content_list_first .beige, #content_list_sec .beige{background-color:#C2B7AF;}
+		#content_list_first .navy, #content_list_sec .navy{background-color:#32425F;}
+
+		#content_list_first li div, #content_list_sec li div{width:560px; height:620px; overflow:hidden;}
+		#content_list_first li a, #content_list_sec li a{display:block; width:100%; height:100%; position:relative;}
+		#content_list_first .left div, #content_list_sec .left div{position:absolute; right:40px; top:0;}
+		#content_list_first .right div, #content_list_sec .right div{padding-left:40px;}
+
+		/* 각 구간 글씨 색상 설정 */
+		#content_list_first .beige a, #content_list_sec .beige a{color:#333;}
+		#content_list_first .navy a, #content_list_sec .navy a{color:#fff;}
+		#content_list_first .navy a .desc, #content_list_sec .navy a .desc{color:#b9bee1;}
+
+		#content_list_first a .list_desc, #content_list_sec a .list_desc{display:block; width:100%; padding:62px 0 10px;}
+		#content_list_first a em, #content_list_sec a em{font-style:normal; display:block; width:100%; font-size:26px;}
+		#content_list_first a strong, #content_list_sec a strong{display:block; width:100%; font-size:44px; line-height:45px;
+			padding:10px 0 35px;}
+		#content_list_first a .btn, #content_list_sec a .btn{display:block; width:50px; height:50px;
+			position:absolute; right:0; top:62px;
+			transform:rotate(0deg); transition:transform .3s ease-in-out;}
+		#content_list_first a .btn img, #content_list_sec a .btn img{width:100%; height:100%;}
+
+		/*기능 적용 : 버튼에 마우스 올리면 회전*/
+		#content_list_first a .btn:hover, #content_list_sec a .btn:hover{transform:rotate(90deg);}
+
+		#content_list_first a .list_img, #content_list_sec a .list_img{display:block; width:400px;
+			padding:0 50px 0 110px; transform:scale(1);
+			transition:transform .2s linear;}
+		#content_list_first a .list_img img, #content_list_sec a .list_img img{width:100%;}
+		#content_list_first a .list_img_chupa{display:block; width:540px; transform:scale(1);
+			transition:transform .2s linear;}
+		#content_list_first a .list_img_chupa .chups0{display:block; width:60%; float:left;}
+		#content_list_first a .list_img_chupa .chups1{display:block; width:40%; float:left;}
+		#content_list_sec a .list_img_charmingjo{display:block; width:540px; transform:scale(1);
+			transition:transform .2s linear;}
+		#content_list_sec a .list_img_charmingjo .cho0{width:70%; margin-left:3%;}
+		#content_list_sec a .list_img_charmingjo .cho1{width:92%; margin-left:8%;}
+
+		/* 기능 적용 : li에 hover하면 이미지 커지기 */
+		#content_list_first li:hover .list_img, #content_list_first li:hover .list_img_chupa,
+		#content_list_sec li:hover .list_img, #content_list_sec li:hover .list_img_charmingjo{
+			transform:scale(1.03);}
+
+		#content_list_first ul:after, #content_list_first a .list_img_chupa:after,
+		#content_list_sec ul:after{content:""; display:block; clear:both;}
+
+	/*########## contentWrap / subVisual1 ##########*/
+		#subVisual1{width:100%; height:566px; background-color:#0F2C0D; position:relative;}
+		#subVisual1 .subVisual_bg{width:100%; height:0; background-image:url("../img/mtn_bg.png"); background-position:center top; position:absolute; left:0; top:0; transition:height .5s linear;}
+		
+		/* 기능 적용 : 서브비쥬얼 영역에 마우스 올라가면 배경 스르륵 나오기 */
+		#subVisual1:hover .subVisual_bg{height:100%;}
+		#subVisual1 .subVisualArea{width:100%; height:100%; position:absolute; left:0; top:0;}
+		#subVisual1 .subVisual{width:1200px; height:100%; margin:0 auto; position:relative;}
+		#subVisual1 a{display:block; width:100%; height:100%; color:#fff; position:absolute; left:0; top:0;}
+		#subVisual1 a .subVisual_img{display:block; width:400px; height:518px; padding:24px 100px; float:left;
+			transform:scale(1); transition:transform .2s linear;}
+		#subVisual1 a .subVisual_img img{width:100%;}
+
+		/*기능 적용 : 마우스 올리면 이미지 확대*/
+		#subVisual1 a:hover .subVisual_img, #subVisual1 a:focus .subVisual_img{transform:scale(1.05);}
+
+		/*##### subVisual_desc #####*/
+		#subVisual1 a .subVisual_desc{display:block; width:500px; height:206px; margin:180px 50px; float:left;		 
+			position:relative;}
+		#subVisual1 a .subVisual_desc em{font-style:normal; display:block; width:100%; font-size:33px;
+			line-height:45px;}
+		#subVisual1 a .subVisual_desc em .green{color:#92D50B; font-weight:700;}
+		#subVisual1 a .subVisual_desc strong{display:block; width:100%; font-size:50px; padding:10px 0 35px;
+			line-height:50px;}
+		#subVisual1 a .subVisual_desc .desc{color:#8cb87f;}
+		#subVisual1 a .subVisual_desc .btn{display:block; width:50px; height:50px; 
+			position:absolute; right:0; top:0;
+			transform:rotate(0deg); transition:transform .3s ease-in-out;}
+		#subVisual1 a .subVisual_desc .btn img{width:100%; height:100%;}
+
+		/*기능 적용 : 버튼에 마우스 올리면 회전*/
+		#subVisual1 a .subVisual_desc .btn:hover{transform:rotate(90deg);}
+
+	/*################################ 반응형 맞추기 #######################################*/
+		@media all and (min-width:1025px) and (max-width:1199px){
+			#header{width:1000px;}
+			#rightMenu{padding-left:420px;}
+			#fila_logo{width:750px;}
+			#fila_logo a{margin:8px 210px 11px 460px;}
+			#gnb li .subMenu h3{font-size:25px;}
+			#gnb li .subMenu .subMenu_fila .subMenuList, #gnb li .subMenu .subMenu_proWrap,
+			#gnb li .subMenu .subMenu_brand .subMenuList{width:1000px;}
+			#gnb li .subMenu .subMenu_visualArea div{height:125px;}
+			#gnb li .subMenu .subMenu_brand .subMenuList{width:960px;}
+			#gnb li .subMenu .subMenu_brand li{width:150px;}
+			#gnb li .subMenu .subMenu_brand li a .brandImg{height:180px;}
+			
+			#content_now .now{width:1000px;}
+			#content_now a .now_img{padding:0 50px;}
+			#content_now a .now_desc{width:400px;}
+			#content_list_first a em, #content_list_sec a em{font-size:23px;}
+			#content_list_first li div, #content_list_sec li div{width:480px;}
+			#content_list_first .left div, #content_list_sec .left div{right:20px;}
+			#content_list_first .right div, #content_list_sec .right div{padding-left:20px;}
+			#content_list_first a .list_img, #content_list_sec a .list_img{width:300px;}
+			#content_list_first a .list_img_chupa{width:450px;}
+
+			#subVisual1 .subVisual{width:1000px;}
+			#subVisual1 a .subVisual_img{padding:24px 50px;}
+			#subVisual1 a .subVisual_desc{width:400px;}
+			#subVisual1 a .subVisual_desc strong{font-size:40px;}
+			#subVisual1 a .subVisual_desc .desc{font-size:15px;}
+
+			#footer{width:1000px;}
+			#footer #logo{width:220px;}
+			#footer .topMenu_footer{width:780px; height:157px; float:left;}
+			#footer .topMenu_footer li{width:120px; float:left; font-size:12px; padding-left:10px;}
+			#footer .bottom_footer .lang_contentArea .content_info div .content_info_img{position:absolute; right:211px;}
+		}
+
+		@media all and (min-width:768px) and (max-width:1024px){
+			h3{font-size:20px; margin-bottom:20px;}
+			#headerWrap{height:170px;}
+			#header{width:748px;}
+
+			#leftMenu{width:160px;}
+			#rightMenu{padding-left:308px;}
+			
+			#header .logo_searchArea{height:100px;}
+			#fila_logo{width:548px;}
+			#fila_logo a{width:50px; height:71px; margin:4px 139px 5px 339px;}
+
+			#searchArea{width:200px;}
+			#searchArea form{width:200px; margin:66px 0 10px;}
+			#searchArea form .input{width:200px;}
+			#searchArea form .input input{width:180px;}
+			#nav{height:40px; line-height:40px;}
+			#gnb li.mainCate{height:40px;}
+			#gnb li a.mainCate{height:40px;padding:0 20px; font-size:13px;}
+			
+			#gnb li .subMenu h3{font-size:20px; margin-bottom:0;}
+			#gnb li .subMenu .subMenu_fila h3{padding-bottom:15px;}
+			#gnb li .subMenu .subMenu_titleArea h3{padding-bottom:0;}
+			#gnb li .subMenu .subMenu_brand h3{padding-bottom:15px;}
+			#gnb li .subMenu .subMenu_fila .subMenuList, #gnb li .subMenu .subMenu_proWrap,
+			#gnb li .subMenu .subMenu_brand .subMenuList{width:748px;}
+			#gnb li .subMenu .subMenu_visualArea div{height:94px;}
+			#gnb li .subMenu .subMenu_brand .subMenuList{width:720px;}
+			#gnb li .subMenu .subMenu_brand li{width:110px; font-size:13px;}
+			#gnb li .subMenu .subMenu_brand li a .brandImg{height:127px;}
+
+			#visualWrap{height:250px; background-size:200%;}
+			#visual, #visual h3{line-height:250px; font-size:40px;}
+			#content_now .content_now_bg{height:300px;}
+			#content_now .content_now_bg img{height:100%;}
+			#content_now .now{width:748px; height:340px;}
+			#content_now a .now_img{width:240px; padding:0 50px;}
+			#content_now a .now_desc{width:360px; height:280px; margin:30px 24px;}
+			#content_now a .now_desc b{font-size:20px; height:35px; line-height:35px; width:120px;
+				margin-bottom:20px;}
+			#content_now a .now_desc em{font-size:26px; line-height:36px;}
+			#content_now a .now_desc strong{font-size:40px; padding:10px 0 25px; line-height:45px;}
+			#content_now a .now_desc .desc{font-size:14px;}
+			
+			#content_list_first li, #content_list_sec li{height:450px;}
+			#content_list_first li div, #content_list_sec li div{width:364px; height:450px; font-size:14px;}
+			#content_list_first .left div, #content_list_sec .left div{right:10px;}
+			#content_list_first .right div, #content_list_sec .right div{padding-left:10px;}
+			#content_list_first a em, #content_list_sec a em{font-size:18px;}
+			#content_list_first a strong, #content_list_sec a strong{font-size:30px; line-height:40px; padding:7px 0 20px;}
+			#content_list_first a .btn, #content_list_sec a .btn, #subVisual1 a .subVisual_desc .btn{width:40px; height:40px; right:5px;}
+
+			#content_list_first a .list_img, #content_list_sec a .list_img{width:250px;}
+			#content_list_first a .list_img_chupa{width:300px;}
+			#content_list_sec a .list_img_charmingjo{width:350px;}
+			
+			#subVisual1{height:400px;}
+			#subVisual1 .subVisual{width:748px;}
+			#subVisual1 a .subVisual_img{width:260px; height:352px; padding:24px 50px;}
+			#subVisual1 a .subVisual_desc{width:300px; margin:97px 44px;}
+			#subVisual1 a .subVisual_desc em{font-size:30px; line-height:35px;}
+			#subVisual1 a .subVisual_desc strong{font-size:35px; padding:10px 0 15px;}
+
+			#footer{width:748px; position:static;}
+
+			#footer .top_footer{width:100%; padding:50px 0 20px;}
+			#footer #logo{width:170px; height:70px; float:none; margin:0 auto; text-align:center; position:relative;}
+			#footer #logo .down{display:block; position:absolute; right:0; bottom:0; font-size:12px; cursor:pointer; color:#ccc;}
+			#footer #logo img{width:120px;}
+			#footer .mobAddress{display:block; padding-top:20px; font-size:12px; text-align:center;}
+			#footer .mobAddress i{font-style:normal; color:#999;}
+			#footer .topMenu_footer{display:none;}
+			#footer .bottom_footer{width:100%;}
+			#footer .bottom_footer .bottomMenu_footer{height:20px; line-height:20px;
+				font-size:15px; padding-bottom:0;}
+			#footer .bottom_footer .bottomMenu_footer li{display:inline-block; line-height:20px;}
+
+			#footer .bottom_footer .snsMenu_footer{width:230px; height:30px; margin:20px auto;}
+			#footer .bottom_footer .snsMenu_footer li{width:46px; height:30px;}
+			#footer .bottom_footer .snsMenu_footer a img{width:30px; height:30px;}
+
+			#footer .bottom_footer .lang_contentArea{width:100%; height:30px; line-height:30px; margin:0; margin-bottom:20px;}
+			#footer .bottom_footer .lang_contentArea .langArea{height:30px; float:none; margin:0 auto;}
+			#footer .bottom_footer .lang_contentArea #lang{width:150px; height:28px; border:none;
+				border-bottom:2px solid #ccc; font-size:12px;}
+			#footer .bottom_footer .lang_contentArea i{display:none;}
+			#footer .bottom_footer .lang_contentArea .content_info{display:none;}
+
+			#footer address{display:none;}
+			#footer .info{padding-bottom:13px; font-size:11px;}
+		}
+
+		@media all and (min-width:480px) and (max-width:767px){
+			h3{font-size:22px; margin-bottom:20px;}
+			#headerWrap{display:none;}
+			#mobHeader{display:block;}
+
+			#visualWrap{height:150px;}
+			#visual, #visual h3{font-size:20px; line-height:150px;}
+			#content_now{padding:30px 0;}
+			#content_now .content_now_bg{height:500px; top:20px;}
+			#content_now .now{width:460px; height:533px;}
+			#content_now .content_now_bg img{height:100%;}
+			#content_now a .now_img{width:200px; height:283px; padding:0 130px;float:none;}
+			#content_now a .now_desc{width:400px; height:210px; margin:20px 30px;}
+			#content_now a .now_desc b{font-size:14px; height:30px; line-height:30px; width:100px; margin-bottom:10px;}
+			#content_now a .now_desc em{font-size:16px; line-height:30px;}
+			#content_now a .now_desc strong{font-size:26px; line-height:30px; padding-bottom:20px;}
+			#content_now a .now_desc .desc{font-size:12px;}
+			#content_now a .now_desc .btn, #content_list_first a .btn, #content_list_sec a .btn,
+			#subVisual1 a .subVisual_desc .btn{width:36px; height:36px; right:5px;}
+
+			#content_list_first li, #content_list_sec li{width:100%; height:550px; float:none;}
+			#content_list_first .navy, #content_list_sec .navy{background-color:#C2B7AF;}
+			#content_list_first li:nth-child(2n), #content_list_sec li:nth-child(2n){background-color:#32425F;}
+			#content_list_first .navy a .desc, #content_list_sec .navy a .desc{color:#333;}
+			#content_list_first .navy a, #content_list_sec .navy a{color:#333;}
+			#content_list_first li:nth-child(2n) a, #content_list_sec li:nth-child(2n) a{color:#fff;}
+			#content_list_first li:nth-child(2n) .desc, #content_list_sec li:nth-child(2n) .desc{color:#b9bee1;}
+			#content_list_first li div, #content_list_sec li div{width:100%; height:550px;}
+			#content_list_first .left div, #content_list_sec .left div{right:0;}
+			#content_list_first .right div, #content_list_sec .right div{padding-left:0;}
+			#content_list_first a .list_desc, #content_list_sec a .list_desc{padding:30px 0; font-size:12px;}
+			#content_list_first a em, #content_list_sec a em{font-size:16px;}
+			#content_list_first a strong, #content_list_sec a strong{font-size:23px; line-height:30px; padding:10px 0;}
+			#content_list_first a .list_img, #content_list_sec a .list_img{width:300px; padding:0; margin:0 auto;}
+			#content_list_first a .list_img_chupa, #content_list_sec a .list_img_charmingjo{width:400px; margin:0 auto; margin-top:30px;}
+
+			#subVisual1{height:553px;}
+			#subVisual1 .subVisual{width:460px;}
+			#subVisual1 a .subVisual_img{width:280px; height:363px; float:none; padding:10px 90px;}
+			#subVisual1 a .subVisual_desc{width:440px; height:150px; margin:10px; float:none;}
+			#subVisual1 a .subVisual_desc em{font-size:16px; line-height:20px;}
+			#subVisual1 a .subVisual_desc strong{font-size:26px; padding:10px 0; line-height:30px;}
+			#subVisual1 a .subVisual_desc .desc{font-size:12px;}
+
+			#container .topBtn{width:40px; height:40px; border-radius:20px; right:20px; bottom:20px;}
+			#container .topBtn a{border-radius:20px;}
+			#container .topBtn a img{border-radius:20px;}
+
+			#footer{width:460px; position:static;}
+
+			#footer .top_footer{width:100%; padding:50px 0 20px;}
+			#footer #logo{width:170px; height:70px; float:none; margin:0 auto; text-align:center; position:relative;}
+			#footer #logo .down{display:block; position:absolute; right:0; bottom:0; font-size:12px; cursor:pointer; color:#ccc;}
+			#footer #logo img{width:120px;}
+			#footer .mobAddress{display:block; padding-top:20px; font-size:12px; text-align:center;}
+			#footer .mobAddress i{font-style:normal; color:#999;}
+			#footer .topMenu_footer{display:none;}
+			#footer .bottom_footer{width:100%;}
+			#footer .bottom_footer .bottomMenu_footer{height:40px; line-height:20px;
+				font-size:15px; padding-bottom:0;}
+			#footer .bottom_footer .bottomMenu_footer li{display:inline-block; line-height:20px;}
+
+			#footer .bottom_footer .snsMenu_footer{width:225px; height:28px; margin:20px auto;}
+			#footer .bottom_footer .snsMenu_footer li{width:45px; height:28px;}
+			#footer .bottom_footer .snsMenu_footer a img{width:28px; height:28px;}
+
+			#footer .bottom_footer .lang_contentArea{width:100%; height:30px; line-height:30px; margin:0; margin-bottom:20px;}
+			#footer .bottom_footer .lang_contentArea .langArea{height:30px; float:none; margin:0 auto;}
+			#footer .bottom_footer .lang_contentArea #lang{width:150px; height:28px; border:none;
+				border-bottom:2px solid #ccc; font-size:12px;}
+			#footer .bottom_footer .lang_contentArea i{display:none;}
+			#footer .bottom_footer .lang_contentArea .content_info{display:none;}
+
+			#footer address{display:none;}
+			#footer .info{padding-bottom:13px; font-size:11px;}
+		}
+
+		@media all and (min-width:320px) and (max-width:479px){
+			h3{font-size:20px; margin-bottom:20px;}
+			#headerWrap{display:none;}
+			#mobHeader{display:block;}
+			
+			#mobHeader #searchMob{right:45px;}
+			#mobHeader #my_shopping{right:7px;}
+
+			#visualWrap{height:150px;}
+			#visual, #visual h3{font-size:20px; line-height:150px;}
+			#content_now{padding:30px 0;}
+			#content_now .content_now_bg{height:500px; top:20px;}
+			#content_now .now{width:300px; height:533px;}
+			#content_now .content_now_bg img{height:100%;}
+			#content_now a .now_img{width:200px; height:283px; padding:0 50px;float:none;}
+			#content_now a .now_desc{width:260px; height:210px; margin:20px;}
+			#content_now a .now_desc b{font-size:14px; height:30px; line-height:30px; width:100px; margin-bottom:10px;}
+			#content_now a .now_desc em{font-size:16px; line-height:30px;}
+			#content_now a .now_desc strong{font-size:26px; line-height:30px; padding-bottom:20px;}
+			#content_now a .now_desc .desc{font-size:12px;}
+			#content_now a .now_desc .btn, #content_list_first a .btn, #content_list_sec a .btn,
+			#subVisual1 a .subVisual_desc .btn{width:36px; height:36px; right:5px;}
+
+			#content_list_first li, #content_list_sec li{width:100%; height:500px; float:none;}
+			#content_list_first .navy, #content_list_sec .navy{background-color:#C2B7AF;}
+			#content_list_first li:nth-child(2n), #content_list_sec li:nth-child(2n){background-color:#32425F;}
+			#content_list_first .navy a .desc, #content_list_sec .navy a .desc{color:#333;}
+			#content_list_first .navy a, #content_list_sec .navy a{color:#333;}
+			#content_list_first li:nth-child(2n) a, #content_list_sec li:nth-child(2n) a{color:#fff;}
+			#content_list_first li:nth-child(2n) .desc, #content_list_sec li:nth-child(2n) .desc{color:#b9bee1;}
+			#content_list_first li div, #content_list_sec li div{width:100%; height:500px;}
+			#content_list_first .left div, #content_list_sec .left div{right:0;}
+			#content_list_first .right div, #content_list_sec .right div{padding-left:0;}
+			#content_list_first a .list_desc, #content_list_sec a .list_desc{padding:30px 0; font-size:12px;}
+			#content_list_first a em, #content_list_sec a em{font-size:14px;}
+			#content_list_first a strong, #content_list_sec a strong{font-size:20px; line-height:30px; padding:10px 0;}
+			#content_list_first a .list_img, #content_list_sec a .list_img{width:260px; padding:0; margin:0 auto;}
+			#content_list_first a .list_img_chupa, #content_list_sec a .list_img_charmingjo{width:350px; margin-top:30px;}
+
+			#subVisual1{height:553px;}
+			#subVisual1 .subVisual{width:300px;}
+			#subVisual1 a .subVisual_img{width:280px; height:363px; float:none; padding:10px;}
+			#subVisual1 a .subVisual_desc{width:280px; height:150px; margin:10px; float:none;}
+			#subVisual1 a .subVisual_desc em{font-size:16px; line-height:20px;}
+			#subVisual1 a .subVisual_desc strong{font-size:26px; padding:10px 0; line-height:30px;}
+			#subVisual1 a .subVisual_desc .desc{font-size:12px;}
+
+			#container .topBtn{width:40px; height:40px; border-radius:20px; right:20px; bottom:20px;}
+			#container .topBtn a{border-radius:20px;}
+			#container .topBtn a img{border-radius:20px;}
+
+			#footer{width:300px; position:static;}
+
+			#footer .top_footer{width:100%; padding:50px 0 20px;}
+			#footer #logo{width:130px; height:60px; float:none; margin:0 auto; position:relative; text-align:center;}
+			#footer #logo .down{display:block; position:absolute; right:0; bottom:0; font-size:12px; cursor:pointer; color:#ccc;}
+			#footer #logo img{width:100px;}
+			#footer .mobAddress{display:block; padding-top:20px; font-size:10px; text-align:center;}
+			#footer .mobAddress i{font-style:normal; color:#999;}
+			#footer .topMenu_footer{display:none;}
+			#footer .bottom_footer{width:100%;}
+			#footer .bottom_footer .bottomMenu_footer{height:40px; line-height:0;
+				font-size:13px; padding-bottom:0;}
+			#footer .bottom_footer .bottomMenu_footer li{display:inline-block; line-height:20px;}
+
+			#footer .bottom_footer .snsMenu_footer{width:200px; height:25px; margin:20px auto;}
+			#footer .bottom_footer .snsMenu_footer li{width:40px; height:25px;}
+			#footer .bottom_footer .snsMenu_footer a img{width:25px; height:25px;}
+
+			#footer .bottom_footer .lang_contentArea{width:100%; height:30px; line-height:30px; margin:0; margin-bottom:20px;}
+			#footer .bottom_footer .lang_contentArea .langArea{height:30px; float:none; margin:0 auto;}
+			#footer .bottom_footer .lang_contentArea #lang{width:150px; height:28px; border:none;
+				border-bottom:2px solid #ccc; font-size:12px;}
+			#footer .bottom_footer .lang_contentArea i{display:none;}
+			#footer .bottom_footer .lang_contentArea .content_info{display:none;}
+
+			#footer address{display:none;}
+			#footer .info{padding-bottom:13px;}
+		}
+  </style>
+ </head>
+ <body>
+	<div id="wrap">
+		<header id="headerWrap">
+			<div id="header">
+				<h1>
+					FILA
+				</h1>
+				<div id="topMenu">
+					<h2>위쪽 메뉴 영역</h2>
+					<ul id="leftMenu">
+						<li><a href="#none" title="event">EVENT</a></li>
+						<li><a href="#none" title="editorial">EDITORIAL</a></li>
+					</ul>
+					<ul id="rightMenu">
+						<li><a href="./login.php" title="login">LOGIN</a></li>
+						<li><a href="./fila_join.php" title="join">JOIN</a></li>
+						<li><a href="#none" title="cart">
+								<span class="cart">CART</span>
+								<i><img src="../img/shopping_cart.png" alt="쇼핑카트이미지"/></i>
+							</a></li>
+						<li class="mypageArea">
+							<a href="#none" title="mypage">
+								MY PAGE <span>▼</span>
+							</a>
+							<ul>
+								<li><a href="#none" title="구매정보">구매정보</a></li>
+								<li><a href="#none" title="배송조회">배송조회</a></li>
+								<li><a href="#none" title="개인정보">개인정보</a></li>
+								<li><a href="./fila_qna.php" title="개인문의">1:1 문의</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<div class="logo_searchArea">
+					<div id="fila_logo">
+						<a href="../index.php" title="FILA">
+							<img src="../img/fila_logo.jpg" alt="휠라로고이미지"/>
+						</a>
+					</div>
+					<div id="searchArea">
+						<h2>검색영역</h2>
+						<form action="#none" method="get">
+							<fieldset>
+								<legend>검색</legend>
+								<p class="input">
+									<input id="search" type="text" name="search" title="검색" placeholder="Search..."/>
+									<input id="searchButton" type="image" name="searchButton" src="../img/search.png" alt="돋보기이미지" title="돋보기이미지"/>
+								</p>
+							</fieldset>
+						</form>
+					</div>
+				</div>
+				<div id="nav">
+					<h2>메인 네비게이션 영역</h2>
+					<ul id="gnb">
+						<li class="mainCate">
+							<a class="mainCate" href="#none" title="fila">FILA</a>
+							<div class="subMenuWrap">
+								<div class="subMenu">
+									<div class="subMenu_fila">
+										<h3>fila</h3>
+										<ul class="subMenuList">
+											<li>
+												<a href="./fila_intro.html" title="about fila">about fila</a>
+											</li>
+											<li>
+												<a href="./fila_history.html" title="history">history</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="mainCate">
+							<a class="mainCate" href="#none" title="men">MEN</a>
+							<div class="subMenuWrap">
+								<div class="subMenu">
+									<div class="subMenu_product">
+										<div class="subMenu_proWrap">
+											<div class="subMenu_titleArea">
+												<h3>men</h3>
+												<ul class="subMenuList">
+													<li class="subMenuList_title">휠라 남성 제품</li>
+													<li>
+														<a href="./fila_mensclothes.html" title="남성의류">men's clothes</a>
+													</li>
+													<li>
+														<a href="./fila_mensshoes.html" title="남성신발">men's shoes</a>
+													</li>
+													<li>
+														<a href="./fila_mensbag.html" title="남성가방">men's bag</a>
+													</li>
+													<li>
+														<a href="./fila_mensacc.html" title="남성악세서리">men's acc</a>
+													</li>
+												</ul>
+											</div>
+											<div class="subMenu_visualArea">
+												<div class="subMenu_visaul0">
+													<p class="subMenu_visual_img">
+														<a href="#none" title="rgbTheStreet">
+															<img src="../img/subMenu_men_visual0.jpg" alt="남성서브비쥬얼이미지0"/>
+														</a>
+													</p>
+												</div>
+												<div class="subMenu_visaul1">
+													<p class="subMenu_visual_img">
+														<a href="#none" title="filax10cc">
+															<img src="../img/subMenu_men_visual1.jpg" alt="남성서브비쥬얼이미지1"/>
+														</a>
+													</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="mainCate">
+							<a class="mainCate" href="#none" title="women">WOMEN</a>
+							<div class="subMenuWrap">
+								<div class="subMenu">
+									<div class="subMenu_product">
+										<div class="subMenu_proWrap">
+											<div class="subMenu_titleArea">
+												<h3>women</h3>
+												<ul class="subMenuList">
+													<li class="subMenuList_title">휠라 여성 제품</li>
+													<li>
+														<a href="./fila_womensclothes.html" title="여성의류">women's clothes</a>
+													</li>
+													<li>
+														<a href="#none" title="여성신발">women's shoes</a>
+													</li>
+													<li>
+														<a href="#none" title="여성가방">women's bag</a>
+													</li>
+													<li>
+														<a href="#none" title="여성악세서리">women's acc</a>
+													</li>
+												</ul>
+											</div>
+											<div class="subMenu_visualArea">
+												<div class="subMenu_visaul0">
+													<p class="subMenu_visual_img">
+														<a href="#none" title="checkerboard">
+															<img src="../img/subMenu_women_visual0.jpg" alt="여성서브비쥬얼이미지0"/>
+														</a>
+													</p>
+												</div>
+												<div class="subMenu_visaul1">
+													<p class="subMenu_visual_img">
+														<a href="#none" title="rgbthestreet">
+															<img src="../img/subMenu_women_visual1.jpg" alt="여성서브비쥬얼이미지1"/>
+														</a>
+													</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="mainCate">
+							<a class="mainCate" href="#none" title="boys">BOYS</a>
+							<div class="subMenuWrap">
+								<div class="subMenu">
+									<div class="subMenu_product">
+										<div class="subMenu_proWrap">
+											<div class="subMenu_titleArea">
+												<h3>boys</h3>
+												<ul class="subMenuList">
+													<li class="subMenuList_title">휠라 남성 아동 제품</li>
+													<li>
+														<a href="#none" title="남아의류">boy's clothes</a>
+													</li>
+													<li>
+														<a href="#none" title="남아신발">boy's shoes</a>
+													</li>
+													<li>
+														<a href="#none" title="남아가방">boy's bag</a>
+													</li>
+													<li>
+														<a href="#none" title="남아악세서리">boy's acc</a>
+													</li>
+												</ul>
+											</div>
+											<div class="subMenu_visualArea">
+												<div class="subMenu_visaul0">
+													<p class="subMenu_visual_img">
+														<a href="#none" title="newtrokids">
+															<img src="../img/subMenu_boys_visual0.jpg" alt="남아서브비쥬얼이미지0"/>
+														</a>
+													</p>
+												</div>
+												<div class="subMenu_visaul1">
+													<p class="subMenu_visual_img">
+														<a href="#none" title="wonniefriends">
+															<img src="../img/subMenu_boys_visual1.jpg" alt="남아서브비쥬얼이미지1"/>
+														</a>
+													</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="mainCate">
+							<a class="mainCate" href="#none" title="girls">GIRLS</a>
+							<div class="subMenuWrap">
+								<div class="subMenu">
+									<div class="subMenu_product">
+										<div class="subMenu_proWrap">
+											<div class="subMenu_titleArea">
+												<h3>girls</h3>
+												<ul class="subMenuList">
+													<li class="subMenuList_title">휠라 여성 아동 제품</li>
+													<li>
+														<a href="#none" title="여아의류">girl's clothes</a>
+													</li>
+													<li>
+														<a href="#none" title="여아신발">girl's shoes</a>
+													</li>
+													<li>
+														<a href="#none" title="여아가방">girl's bag</a>
+													</li>
+													<li>
+														<a href="#none" title="여아악세서리">girl's acc</a>
+													</li>
+												</ul>
+											</div>
+											<div class="subMenu_visualArea">
+												<div class="subMenu_visaul0">
+													<p class="subMenu_visual_img">
+														<a href="#none" title="newtrokids">
+															<img src="../img/subMenu_girls_visual0.jpg" alt="여아서브비쥬얼이미지0"/>
+														</a>
+													</p>
+												</div>
+												<div class="subMenu_visaul1">
+													<p class="subMenu_visual_img">
+														<a href="#none" title="snackTime">
+															<img src="../img/subMenu_girls_visual1.jpg" alt="여아서브비쥬얼이미지1"/>
+														</a>
+													</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="mainCate">
+							<a class="mainCate" href="#none" title="brand">BRAND</a>
+							<div class="subMenuWrap">
+								<div class="subMenu">
+									<div class="subMenu_brand">
+										<h3>brand</h3>
+										<ul class="subMenuList">
+											<li>
+												<a href="./fila_collabo.html" title="collabo">
+													<span class="brandImg"><img src="../img/collabo_subImg.jpg" alt="서브네비이미지0"/></span>
+													<span class="brandText">collabo</span>
+												</a>
+											</li>
+											<li>
+												<a href="./fila_heritage.html" title="heritage">
+													<span class="brandImg"><img src="../img/heritage_subImg.jpg" alt="서브네비이미지1"/></span>
+													<span class="brandText">heritage</span></a>
+											</li>
+											<li>
+												<a href="./fila_golf.html" title="golf">
+													<span class="brandImg"><img src="../img/golf_subImg.jpg" alt="서브네비이미지2"/></span>
+													<span class="brandText">golf</span></a>
+											</li>
+											<li>
+												<a href="./fila_kids.html" title="kids">
+													<span class="brandImg"><img src="../img/kids_subImg.jpg" alt="서브네비이미지3"/></span>
+													<span class="brandText">kids</span>
+												</a>
+											</li>
+											<li>
+												<a href="./fila_underwear.html" title="underwear">
+													<span class="brandImg"><img src="../img/underwear_subImg.jpg" alt="서브네비이미지4"/></span>
+													<span class="brandText">underwear</span>
+												</a>
+											</li>
+											<li>
+												<a href="./fila_milan.html" title="milan">
+													<span class="brandImg"><img src="../img/milan_subImg.jpg" alt="서브네비이미지5"/></span>
+													<span class="brandText">milan</span>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="mainCate">
+							<a class="mainCate" href="./fila_lookbook.html" title="lookbook">LOOKBOOK</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</header>
+		<div id="mobHeader">
+			<div id="mobNav">
+				<ul>
+					<li>
+						<a class="mobNavTitle" href="#none" title="mypage">MY PAGE</a>
+						<div class="mobSubNav">
+							<p>
+								<a href="./login.php" title="login">login</a>
+							</p>
+							<p>
+								<a href="./fila_qna.php" title="개인문의">1:1 문의</a>
+							</p>
+						</div>
+					</li>
+					<li>
+						<a class="mobNavTitle" href="#none" title="fila">fila</a>
+						<div class="mobSubNav">
+							<p>
+								<a href="./fila_intro.html" title="aboutFila">about fila</a>
+							</p>
+							<p>
+								<a href="./fila_history.html" title="history">history</a>
+							</p>
+						</div>
+					</li>
+					<li>
+						<a class="mobNavTitle" href="#none" title="men">MEN</a>
+						<div class="mobSubNav">
+							<p>
+								<a href="./fila_mensclothes.html" title="남성의류">men's clothes</a>
+							</p>
+							<p>
+								<a href="./fila_mensshoes.html" title="남성신발">men's shoes</a>
+							</p>
+							<p>
+								<a href="./fila_mensbag.html" title="남성가방">men's bag</a>
+							</p>
+							<p>
+								<a href="./fila_mensacc.html" title="남성악세서리">men's acc</a>
+							</p>
+						</div>
+					</li>
+					<li>
+						<a class="mobNavTitle" href="#none" title="women">WOMEN</a>
+						<div class="mobSubNav">
+							<p>
+								<a href="./fila_womensclothes.html" title="여성의류">women's clothes</a>
+							</p>
+							<p>
+								<a href="#none" title="여성신발">women's shoes</a>
+							</p>
+							<p>
+								<a href="#none" title="여성가방">women's bag</a>
+							</p>
+							<p>
+								<a href="#none" title="여성악세서리">women's acc</a>
+							</p>
+						</div>
+					</li>
+					<li>
+						<a class="mobNavTitle" href="#none" title="boys">BOYS</a>
+						<div class="mobSubNav">
+							<p>
+								<a href="#none" title="남아의류">boy's clothes</a>
+							</p>
+							<p>
+								<a href="#none" title="남아신발">boy's shoes</a>
+							</p>
+							<p>
+								<a href="#none" title="남아가방">boy's bag</a>
+							</p>
+							<p>
+								<a href="#none" title="남아악세서리">boy's acc</a>
+							</p>
+						</div>
+					</li>
+					<li>
+						<a class="mobNavTitle" href="#none" title="girls">GIRLS</a>
+						<div class="mobSubNav">
+							<p>
+								<a href="#none" title="여아의류">girl's clothes</a>
+							</p>
+							<p>
+								<a href="#none" title="여아신발">girl's shoes</a>
+							</p>
+							<p>
+								<a href="#none" title="여아가방">girl's bag</a>
+							</p>
+							<p>
+								<a href="#none" title="여아악세서리">girl's acc</a>
+							</p>
+						</div>
+					</li>
+					<li>
+						<a class="mobNavTitle" href="#none" title="brand">BRAND</a>
+						<div class="mobSubNav">
+							<p>
+								<a href="./fila_collabo.html" title="collabo">collabo</a>
+							</p>
+							<p>
+								<a href="./fila_heritage.html" title="heritage">heritage</a>
+							</p>
+							<p>
+								<a href="./fila_golf.html" title="golf">golf</a>
+							</p>
+							<p>
+								<a href="./fila_kids.html" title="kids">kids</a>
+							</p>
+							<p>
+								<a href="./fila_underwear.html" title="underwear">underwear</a>
+							</p>
+							<p>
+								<a href="./fila_milan.html" title="milan">milan</a>
+							</p>
+						</div>
+					</li>
+					<li>
+						<a class="mobNavTitle" href="./fila_lookbook.html" title="lookbook">LOOKBOOK</a>
+					</li>
+				</ul>
+			</div>
+			<div id="mobTitle">
+				<div id="cateArea">
+					<div id="cate">
+						<p class="cateFirst">
+							<span></span>
+						</p>
+						<p class="cateSec">
+							<span></span>
+						</p>
+						<p class="cateThird">
+							<span></span>
+						</p>
+					</div>
+				</div>
+				<div id="mobLogo">
+					<a href="../index.php" title="FILA"><img src="../img/fila_logo.png" alt="휠라로고"/></a>
+				</div>
+				<p id="searchMob">
+					<a href="#none" title="검색"><img src="../img/search_mob.png" alt="검색이미지"/></a>
+				</p>
+				<p id="my_shopping">
+					<a href="#none" title="shopping"><img src="../img/shopping_bag.png" alt="쇼핑백이미지"/></a>
+				</p>
+			</div>
+		</div>
+		<div id="container">
+			<h2>비쥬얼 및 섹션 영역</h2>
+			<div id="visualWrap">
+				<h2>비쥬얼 영역</h2>
+				<section id="visual">
+					<h3>fila x collaboration</h3>
+				</section>
+			</div>
+			<div id="contentWrap">
+				<section id="content_now">
+					<h2>현재 진행중인 콜라보 영역</h2>
+					<p class="content_now_bg">
+						<img src="../img/collabo_bg.png" alt="콜라보 배경"/>
+					</p>
+					<p class="now">
+						<a href="#none" title="filaxstereovinyls">
+							<span class="now_img">
+								<img src="../img/stereo.png" alt="스테레오이미지"/>
+							</span>
+							<span class="now_desc">
+								<b>now sale</b>
+								<em>colour of sound</em>
+								<strong>fila x<br/>stereo vinyls</strong>
+								<span class="desc">다양한 움직임과 소리를 다채로운 컬러로 재해석한 sportswear</span>
+								<span class="btn"><img src="../img/more_btn.png" alt="더보기버튼"></span>
+							</span>
+						</a>
+					</p>
+				</section>
+				<section id="content_list_first">
+					<h2>콜라보 리스트 영역1</h2>
+					<ul>
+						<li class="beige left">
+							<div>
+								<a href="#none" title="filaxhyundaiN브랜드">
+									<span class="list_desc">
+										<em>feel the feeling</em>
+										<strong>
+											fila x<br/>
+											현대자동차 n브랜드
+										</strong>
+										<span class="desc">
+											n브랜드의 dna인 "일상의 스포츠카"라는 주제와<br/>
+											fila의 유니크한 감성의 만남
+										</span>
+										<span class="btn"><img src="../img/more_btn.png" alt="더보기버튼"></span>
+									</span>
+									<span class="list_img">
+										<img src="../img/hyundai.png" alt="n브랜드이미지"/>
+									</span>
+								</a>
+							</div>
+						</li>
+						<li class="navy right">
+							<div>
+								<a href="#none" title="filaxoutdoor">
+									<span class="list_desc">
+										<em>21c life style</em>
+										<strong>
+											fila x<br/>
+											outdoor products
+										</strong>
+										<span class="desc">패션과 라이프스타일의 경계를 허무는 두 브랜드의 만남!</span>
+										<span class="btn"><img src="../img/more_btn.png" alt="더보기버튼"></span>
+									</span>
+									<span class="list_img">
+										<img src="../img/outdoor.png" alt="아웃도어이미지"/>
+									</span>
+								</a>
+							</div>
+						</li>
+						<li class="navy left">
+							<div>
+								<a href="#none" title="filaxliamhodges">
+									<span class="list_desc">
+										<em>british rookie designer</em>
+										<strong>fila x liam hodges</strong>
+										<span class="desc">
+											디자인에 대한 본능적인 접근방식을 가진<br/>
+											liam hodges와 fila의 레트로 아이템
+										</span>
+										<span class="btn"><img src="../img/more_btn.png" alt="더보기버튼"></span>
+									</span>
+									<span class="list_img">
+										<img src="../img/liamhodges.png" alt="liamhodges이미지"/>
+									</span>
+								</a>
+							</div>
+						</li>
+						<li class="beige right">
+							<div>
+								<a href="#none" title="filaxchupachups">
+									<span class="list_desc">
+										<em>forever fun, forever fila</em>
+										<strong>fila x chupa chups</strong>
+										<span class="desc">
+											상상만으로도 달콤한 만남!<br/>
+											해피 바이러스 가득한 패밀리 컬렉션
+										</span>
+										<span class="btn"><img src="../img/more_btn.png" alt="더보기버튼"></span>
+									</span>
+									<span class="list_img_chupa">
+										<img class="chups0" src="../img/chupachups.png" alt="츄파츕스이미지"/>
+										<img class="chups1" src="../img/chupa_text.png" alt="츄파츕스텍스트이미지"/>
+									</span>
+								</a>
+							</div>
+						</li>
+						<li class="beige left">
+							<div>
+								<a href="#none" title="filax정희">
+									<span class="list_desc">
+										<em>life, live, leave, love</em>
+										<strong>fila x 正熙</strong>
+										<span class="desc">
+											네가지 키워드를 일상의 모토로<br/>
+											다양한 아름다움을 포착하는 정희(正熙)와의 만남
+										</span>
+										<span class="btn"><img src="../img/more_btn.png" alt="더보기버튼"></span>
+									</span>
+									<span class="list_img">
+										<img src="../img/artist_collabo.jpg" alt="정희이미지"/>
+									</span>
+								</a>
+							</div>
+						</li>
+						<li class="navy right">
+							<div>
+								<a href="#none" title="filaxjinyob">
+									<span class="list_desc">
+										<em>artist collaboration</em>
+										<strong>fila x jinyob</strong>
+										<span class="desc">
+											스케이트 문화의 아름다움을 포착하는<br/>
+											포토그래퍼 '김진엽'과 휠라의 만남
+										</span>
+										<span class="btn"><img src="../img/more_btn.png" alt="더보기버튼"></span>
+									</span>
+									<span class="list_img">
+										<img src="../img/jinyob.png" alt="진엽이미지"/>
+									</span>
+								</a>
+							</div>
+						</li>
+					</ul>
+				</section>
+				<section id="subVisual1">
+					<h2>서브 비쥬얼영역</h2>
+					<p class="subVisual_bg">
+					</p>
+					<div class="subVisualArea">
+						<p class="subVisual">
+							<a href="#none" title="filaxmtnDew">
+								<span class="subVisual_img">
+									<img src="../img/mtn.png" alt="마운틴듀이미지"/>
+								</span>
+								<span class="subVisual_desc">
+									<em>
+										상쾌하고 짜릿한<br/>
+										<span class="green">mountain dew</span>
+									</em>
+									<strong>fila x mtn dew</strong>
+									<span class="desc">마운틴듀만의 특별한 컬러와 헤리티지 무드 휠라의 만남!</span>
+									<span class="btn"><img src="../img/more_btn.png" alt="더보기버튼"></span>
+								</span>
+							</a>
+						</p>
+					</div>
+				</section>
+				<section id="content_list_sec">
+					<h2>콜라보 리스트 영역2</h2>
+					<ul>
+						<li class="navy left">
+							<div>
+								<a href="#none" title="filax조매력">
+									<span class="list_desc">
+										<em>hot creator #조매력</em>
+										<strong>fila x charming jo</strong>
+										<span class="desc">조매력 음원 발매 기념 콜라보레이션</span>
+										<span class="btn"><img src="../img/more_btn.png" alt="더보기버튼"></span>
+									</span>
+									<span class="list_img_charmingjo">
+										<img class="cho0" src="../img/charmingjo_text.png" alt="조매력타이틀이미지"/>
+										<img class="cho1" src="../img/charmingjo.png" alt="조매력이미지"/>
+									</span>
+								</a>
+							</div>
+						</li>
+						<li class="beige right">
+							<div>
+								<a href="#none" title="filax우왁굳2">
+									<span class="list_desc">
+										<em>alzar takkarsen</em>
+										<strong>
+											fila x<br/>
+											woowakgood s2
+										</strong>
+										<span class="desc">이번 콜라보를 통해 첫 런칭되는 휠라바리케이드 XT 97의 신상 스니커즈</span>
+										<span class="btn"><img src="../img/more_btn.png" alt="더보기버튼"></span>
+									</span>
+									<span class="list_img">
+										<img src="../img/alzar.png" alt="알잘이미지"/>
+									</span>
+								</a>
+							</div>
+						</li>
+						<li class="beige left">
+							<div>
+								<a href="#none" title="filaxhaveagoodtime">
+									<span class="list_desc">
+										<em>일본 도쿄의 셀렉트숍 브랜드</em>
+										<strong>
+											fila x<br/>
+											haveagoodtime
+										</strong>
+										<span class="desc">한, 일 동시 오픈으로 희소성 있는 콜라보레이션 한정판매</span>
+										<span class="btn"><img src="../img/more_btn.png" alt="더보기버튼"></span>
+									</span>
+									<span class="list_img">
+										<img src="../img/haveagoodtime.png" alt="haveagoodtime이미지"/>
+									</span>
+								</a>
+							</div>
+						</li>
+						<li class="navy right">
+							<div>
+								<a href="#none" title="filaxpepsi">
+									<span class="list_desc">
+										<em>throwback pepsi</em>
+										<strong>fila x pepsi</strong>
+										<span class="desc">레트로 무드의 그래픽 포인트가 돋보이는 소장가치 가득한 데일리 아이템!</span>
+										<span class="btn"><img src="../img/more_btn.png" alt="더보기버튼"></span>
+									</span>
+									<span class="list_img">
+										<img src="../img/pepsi.png" alt="펩시이미지"/>
+									</span>
+								</a>
+							</div>
+						</li>
+						<li class="navy left">
+							<div>
+								<a href="#none" title="filaxcommunity54">
+									<span class="list_desc">
+										<em>new york Clinton 54St에서 시작된 community54</em>
+										<strong>fila x community 54</strong>
+										<span class="desc">패션과 아트웍의 경계를 허무는 두 브랜드의 만남</span>
+										<span class="btn"><img src="../img/more_btn.png" alt="더보기버튼"></span>
+									</span>
+									<span class="list_img">
+										<img src="../img/community54.png" alt="커뮤니티54이미지"/>
+									</span>
+								</a>
+							</div>
+						</li>
+						<li class="beige right">
+							<div>
+								<a href="#none" title="filax우왁굳">
+									<span class="list_desc">
+										<em>트위치의 대표 스트리머 우왁굳</em>
+										<strong>fila x woowakgood</strong>
+										<span class="desc">우왁굳만의 훈수가 새겨진 제니훈 라인부터 데일리 아이템까지!</span>
+										<span class="btn"><img src="../img/more_btn.png" alt="더보기버튼"></span>
+									</span>
+									<span class="list_img">
+										<img src="../img/woowak.png" alt="woowak이미지"/>
+									</span>
+								</a>
+							</div>
+						</li>
+					</ul>
+				</section>
+			</div>
+			<p class="topBtn">
+				<a href="#none" title="위로가기"><img src="../img/topBtn.png" alt="위로가기버튼이미지"/></a>
+			</p>
+		</div>
+		<footer id="footerWrap">
+			<h2>푸터영역</h2>
+			<div id="footer">
+				<div class="top_footer">
+					<div id="logo">
+						<h2>fila푸터로고</h2>
+						<img src="../img/fila_footer_logo.png" alt="fila_logo이미지"/><span class="down">▼</span>
+					</div>
+					<p class="mobAddress">
+						서울시 강동구 천호대로 1077<br/>
+						이스트센트럴타워 16층 휠라코리아(주) <i>|</i> 대표이사 : 윤근창<br/>
+						법인명(상호명) 휠라코리아(주)<br/>
+						통신판매업신고 서초 제 2001-00873호<br/>
+						사업자등록번호 114-81-44271 <i>|</i> 개인정보 관리책임자 권창호<br/>
+						대표전화 : 1577-3472 <i>|</i> <a href="#none" title="fila문의메일" style="color:#CC393C;">filaonline@fila.com</a>
+					</p>
+					<ul class="topMenu_footer">
+						<li>
+							<div>
+								<h4>ABOUT FILA</h4>
+								<p>
+									<a href="#none" title="브랜드연혁">브랜드 연혁</a>
+								</p>
+								<p>
+									<a href="#none" title="CEO인사말">CEO 인사말</a>
+								</p>
+								<p>
+									<a href="#none" title="contact_us">CONTACT US</a>
+								</p>
+							</div>
+						</li>
+						<li>
+							<div>
+								<h4>RECRUIT</h4>
+								<p>
+									<a href="#none" title="채용게시판">채용게시판</a>
+								</p>
+								<p>
+									<a href="#none" title="채용결과">채용결과</a>
+								</p>
+							</div>
+						</li>
+						<li>
+							<div>
+								<h4>IR</h4>
+								<p>
+									<a href="#none" title="korea">KOREA</a>
+								</p>
+								<p>
+									<a href="#none" title="english">ENGLISH</a>
+								</p>
+							</div>
+						</li>
+						<li>
+							<div>
+								<h4>ETHICS</h4>
+								<p>
+									<a href="#none" title="윤리경영">윤리경영</a>
+								</p>
+								<p>
+									<a href="#none" title="윤리규범">윤리규범</a>
+								</p>
+								<p>
+									<a href="#none" title="윤리규범실천서약">윤리규범실천서약</a>
+								</p>
+								<p>
+									<a href="#none" title="거래윤리준칙">거래윤리준칙</a>
+								</p>
+								<p>
+									<a href="#none" title="실천프로그램">실천프로그램</a>
+								</p>
+								<p>
+									<a href="#none" title="제보센터">제보센터</a>
+								</p>
+							</div>
+						</li>
+						<li>
+							<div>
+								<h4>ATHLETES</h4>
+								<p>
+									<a href="#none" title="korean_team">KOREAN TEAM</a>
+								</p>
+								<p>
+									<a href="#none" title="global_team">GLOBAL TEAM</a>
+								</p>
+							</div>
+						</li>
+						<li>
+							<div>
+								<h4>CONTACT US</h4>
+								<p>
+									<a href="#none" title="매장안내">매장안내</a>
+								</p>
+								<p>
+									<a href="#none" title="as안내조회">A/S 안내조회</a>
+								</p>
+								<p>
+									<a href="#none" title="대리점개설문의">대리점개설문의</a>
+								</p>
+								<p>
+									<a href="#none" title="fila_one_멤버십">FILA ONE 멤버십</a>
+								</p>
+								<p>
+									<a href="#none" title="위니프렌즈소개">위니프렌즈 소개</a>
+								</p>
+								<p>
+									<a href="#none" title="문의하기">문의하기</a>
+								</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="bottom_footer">
+					<ul class="bottomMenu_footer">
+						<li>
+							<a href="#none" title="통합회원">통합회원</a>
+						</li>
+						<li>
+							<a href="#none" title="이용약관">이용약관</a>
+						</li>
+						<li>
+							<a class="bold" href="#none" title="개인정보처리방침">개인정보 처리방침</a>
+						</li>
+						<li>
+							<a href="#none" title="사업자정보확인"><b>사업자 정보 확인</b></a>
+						</li>
+						<li>
+							<a href="#none" title="공지사항">공지사항</a>
+						</li>
+						<li>
+							<a href="#none" title="faq">FAQ</a>
+						</li>
+						<li>
+							<a href="#none" title="고객센터">고객센터</a>
+						</li>
+					</ul>
+					<ul class="snsMenu_footer">
+						<li>
+							<a href="#none" title="페이스북">
+								<i><img src="../img/icon_fb.png" alt="페이스북아이콘이미지"/></i>
+							</a>
+						</li>
+						<li>
+							<a href="#none" title="인스타그램">
+								<i><img src="../img/icon_ins.png" alt="인스타그램아이콘이미지"/></i>
+							</a>
+						</li>
+						<li>
+							<a href="#none" title="유튜브">
+								<i><img src="../img/icon_youtube.png" alt="유튜브아이콘이미지"/></i>
+							</a>
+						</li>
+						<li>
+							<a href="#none" title="트위터">
+								<i><img src="../img/icon_twitter.png" alt="트위터아이콘이미지"/></i>
+							</a>
+						</li>
+						<li>
+							<a href="#none" title="카카오스토리">
+								<i><img src="../img/icon_kakao.png" alt="카카오스토리아이콘이미지"/></i>
+							</a>
+						</li>
+					</ul>
+					<div class="lang_contentArea">
+						<p class="langArea">
+							<select id="lang" title="언어선택">
+								<option value="kor" selected="selected">korean</option>
+								<option value="eng">english</option>
+								<option value="chn">chinese</option>
+							</select>
+							<i>|</i>
+						</p>
+						<div class="content_info">
+							<p class="content_info_text">
+								콘텐츠산업진흥법에 의한 콘텐츠보호안내
+							</p>
+							<div>
+								<a class="detail" href="#none" title="자세히보기"><b>[자세히보기]</b></a>
+							</div>
+						</div>
+					</div>
+					<div id="address">
+						<address>
+							서울시 강동구 천호대로 1077 이스트센트럴타워 16층 휠라코리아(주) <i>|</i> 대표이사 : 윤근창 <i>|</i> 법인명(상호명) 휠라코리아(주) <i>|</i> 통신판매업신고 서초 제 2001-00873호<br/>
+							사업자등록번호 114-81-44271 <i>|</i> 개인정보 관리책임자 권창호 <i>|</i> 대표전화 : 1577-3472 <i>|</i> <a href="#none" title="fila문의메일" style="color:#CC393C;">filaonline@fila.com</a>
+						</address>
+					</div>
+					<p class="info">
+						본 사이트의 상품이미지 저작권은 휠라코리아(주)에 있으며, 내용의 무단복제를 금합니다.
+					</p>
+					<p id="copyright">
+						COPYRIGHT © 2020 HYEONGWOO JANG ALL RIGHTS RESERVED.
+					</p>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<p class="content_info_img">
+		<img src="../img/fila_content_info.jpg" alt="휠라컨텐츠보호안내이미지"/>
+	</p>
+ </body>
+</html>

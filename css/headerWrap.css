@@ -1,0 +1,147 @@
+/*########## headerWrap ##########*/
+	#headerWrap{width:100%; height:200px; border-bottom:1px solid #ddd; background-color:#fff; position:relative;}
+	#header{width:1200px; height:100%; margin:0 auto;}
+
+/*##### topMenu #####*/
+	#topMenu{width:100%; height:30px;font-size:12px; font-weight:700; position:relative;}
+
+/*##### topMenu / leftMenu #####*/
+	#leftMenu{width:300px; height:100%; float:left;}
+	#leftMenu li{display:inline; line-height:30px;}
+	#leftMenu li a{padding:0 10px; color:#777;}
+
+/*##### topMenu / rightMenu #####*/
+	#rightMenu{width:280px; padding-left:620px; height:100%; float:left;}
+	#rightMenu li{height:100%; line-height:30px; float:left;}
+	#rightMenu li a{display:block; padding:0 10px; height:100%; color:#777;}
+	/*카트 영역 이미지 사이즈 조절, 붙이기*/
+	#rightMenu li a .cart{display:block; float:left;}
+	#rightMenu li a i{display:block; float:left; width:20px; height:20px; padding:5px 0;}
+	#rightMenu li a img{width:100%;}
+
+/*##### topMenu / rightMenu / .mypage#####*/
+	#rightMenu .mypageArea{position:relative;}
+	#rightMenu .mypageArea ul{width:100%; display:none; position:absolute; right:0; top:30px;
+		background-color:#fff; border:1px solid #ccc;}
+	#rightMenu .mypageArea li{width:100%; height:28px; text-align:center; line-height:28px;}
+	#rightMenu .mypageArea a span{display:inline-block;}
+	/*### 기능 ###*/
+	#rightMenu .mypageArea li:hover a{color:#aaa; text-decoration:underline;}
+	/*가상객체 추가하기(mypage 드롭다운메뉴때문에)*/
+	#rightMenu:after{content:""; display:block; clear:both;}
+
+/*##### 로고 #####*/
+	#header .logo_searchArea{width:100%; height:122px;}
+	#fila_logo{width:950px; height:100%; float:left;}
+	#fila_logo a{display:block; width:60px; height:83px; padding:10px; margin:8px 310px 11px 560px;}
+	#fila_logo img{width:100%;}
+
+/*##### searchArea #####*/
+	#searchArea{width:250px; height:100%; float:left;}
+	#searchArea form{width:250px; height:24px; border-bottom:1px solid #000; margin:77px 0 20px;}
+	#searchArea form fieldset{border:none;}
+	#searchArea form legend{display:none;}
+	#searchArea form .input{width:250px; height:20px;}
+	#searchArea form .input input{width:230px; height:20px; border:none; display:block; float:left;}
+	#searchArea form .input #search{text-indent:10px;}
+	#searchArea form .input #searchButton{width:20px;}
+
+/*##### nav #####*/
+	#nav{width:100%; height:48px; line-height:48px;}
+	#gnb{width:100%; height:100%; text-align:center;}
+	#gnb li.mainCate{display:inline-block; height:48px;}
+	#gnb li a.mainCate{display:inline-block; height:48px; font-weight:700; color:#02123E; padding:0 40px; font-size:15px;}
+	#gnb li a.mainCate:hover, #gnb li a.mainCate:focus{color:#CC393C;}
+
+/*##### subMenu #####*/
+	#gnb li .subMenuWrap{width:100%; position:absolute; left:0; top:100%; background-color:#fff; z-index:10;}/*z-index적용중*/
+	#gnb li .subMenu{width:100%; position:relative;}
+	#gnb li .subMenu h3{width:100%; color:#000; font-size:30px; text-transform:uppercase;}
+
+	/*subMenu_fila*/
+	#gnb li .subMenu .subMenu_fila{width:100%; padding:60px 0 100px; background-color:#0b253e;
+		position:absolute; left:0; top:0; display:none;}
+	#gnb li .subMenu .subMenu_fila h3{color:#fff; padding-bottom:40px; text-align:center;}
+	#gnb li .subMenu .subMenu_fila .subMenuList{width:1200px; margin:0 auto; text-align:center;}
+	#gnb li .subMenu .subMenu_fila li{display:inline-block; text-align:center; font-size:15px; height:30px; line-height:30px; text-transform:uppercase;
+		 margin:0 70px;}
+	#gnb li .subMenu .subMenu_fila li a{display:inline-block; height:100%; color:#fff; padding:0 30px;
+		border-bottom:1px solid rgba(255,255,255,0); transition:border-color .3s linear; font-weight:400;}
+
+	#gnb li .subMenu .subMenu_fila li a:hover, #gnb li .subMenu .subMenu_fila li a:focus{border-color:rgba(255,255,255,1);}
+	
+	/*subMenu_product*/
+	#gnb li .subMenu .subMenu_product{width:100%; padding:60px 0 100px; background-color:#fff;
+		position:absolute; left:0; top:0; display:none; border-top:1px solid #ddd;}
+	#gnb li .subMenu .subMenu_proWrap{width:1200px; margin:0 auto;}
+	#gnb li .subMenu .subMenu_titleArea{width:45%; float:left; text-align:left;}
+	#gnb li .subMenu .subMenu_titleArea h3{padding-bottom:10px;}
+	#gnb li .subMenu .subMenu_titleArea .subMenuList{width:100%;}
+	#gnb li .subMenu .subMenu_titleArea .subMenuList_title{width:100%; padding-bottom:5px;}
+	#gnb li .subMenu .subMenu_titleArea li{width:50%; float:left; text-transform:uppercase; font-size:14px; height:30px;
+		line-height:30px; letter-spacing: 0.8px;}
+	#gnb li .subMenu .subMenu_titleArea li a{line-height:30px; border-bottom:1px solid rgba(0,0,0,0);
+		transition:border-color .3s linear; font-weight:400; padding:0;}
+
+	#gnb li .subMenu .subMenu_titleArea li a:hover, #gnb li .subMenu .subMenu_titleArea li a:focus{border-color:rgba(0,0,0,1);}
+
+	#gnb li .subMenu .subMenu_visualArea{width:55%; float:left;}
+	#gnb li .subMenu .subMenu_visualArea div{width:45%; height:150px; margin-right:5%; background-color:#ccc; float:left; position:relative;}
+	#gnb li .subMenu .subMenu_visualArea p{width:100%;}
+	#gnb li .subMenu .subMenu_visualArea p a{display:block; width:100%; padding:0;}
+	#gnb li .subMenu .subMenu_visualArea p a img{width:100%;}
+
+	#gnb li .subMenu .subMenu_visualArea div:hover{box-shadow:0 0 10px rgba(11,37,62,.3);}
+
+	#gnb li .subMenu .subMenu_proWrap:after{content:""; display:block; clear:both;}
+	
+	/*subMenu_brand*/
+	#gnb li .subMenu .subMenu_brand{width:100%; padding:60px 0 80px; background-color:#0b253e;
+		position:absolute; left:0; top:0; display:none;}
+	#gnb li .subMenu .subMenu_brand h3{color:#fff; padding-bottom:40px; text-align:center;}
+	#gnb li .subMenu .subMenu_brand .subMenuList{width:1200px; margin:0 auto; text-align:center;}
+	#gnb li .subMenu .subMenu_brand li{display:block; width:190px; text-align:center; font-size:15px; text-transform:uppercase;
+		 margin:0 5px; float:left;}
+	#gnb li .subMenu .subMenu_brand li a{display:block; width:100%; height:100%; color:#fff;
+		border-bottom:1px solid rgba(255,255,255,0); transition:border-color .3s linear; font-weight:400;}
+	#gnb li .subMenu .subMenu_brand li a span{display:block; width:100%;}
+	#gnb li .subMenu .subMenu_brand li a .brandImg{height:210px; overflow:hidden;}
+	#gnb li .subMenu .subMenu_brand li a img{width:100%; border-top-right-radius:50px;
+		transition:border-radius .3s linear;}
+
+	#gnb li .subMenu .subMenu_brand li a:hover, #gnb li .subMenu .subMenu_brand li a:focus{
+		border-color:rgba(255,255,255,1);}
+	#gnb li .subMenu .subMenu_brand li a:hover img, #gnb li .subMenu .subMenu_brand li a:focus img{
+		border-top-right-radius:0;}
+	
+/*########### mobHeader ##########*/
+	#mobHeader{display:none; width:100%; height:50px; position:relative; border-bottom:1px solid #d7d7d7;
+		z-index:99;}
+	#mobHeader #mobTitle{width:100%; height:100%; background-color:#fff; position:absolute;left:0; top:0;}
+	#mobHeader #cateArea{width:26px; height:26px; position:absolute; left:10px; top:12px; cursor:pointer;}
+	#mobHeader #cate{width:100%; height:100%; overflow:hidden;}
+	#mobHeader #cate p{width:100%; height:3px; background-color:#999; margin:5px auto 0; position:absolute;
+		left:0; top:0; transition:all .3s linear;}
+	#mobHeader #cate p span{display:block; width:0; height:3px; background-color:#214A84; transition:all .3s linear;}
+	
+	#mobHeader #cate .cateSec, #mobHeader #cate .cateSec span{transition-delay:.3s; top:8px;}
+	#mobHeader #cate .cateThird, #mobHeader #cate .cateThird span{transition-delay:.6s; top:16px;}
+
+	#mobHeader #mobLogo{width:61px; height:20px; margin:0 auto; padding:15px 0;}
+	#mobHeader #mobLogo a{display:block; width:100%; height:100%;}
+	#mobHeader #mobLogo img{display:block; width:54px; height:18px; margin:1px auto;}
+	#mobHeader #searchMob{width:26px; height:26px; position:absolute; right:50px; top:12px;}
+	#mobHeader #searchMob a{display:block; width:100%; height:100%;}
+	#mobHeader #searchMob img{display:block; width:22px; height:22px; margin:2px auto;}
+	#mobHeader #my_shopping{width:26px; height:26px; position:absolute; right:10px; top:12px;}
+	#mobHeader #my_shopping a{display:block; width:100%; height:100%;}
+	#mobHeader #my_shopping a img{display:block; width:18px; height:24px; margin:1px auto;}
+
+/*##### 모바일용 네비게이션 #####*/
+	#mobNav{width:100%; display:none;position:absolute; top:100%; background-color:#fff; border-top:1px solid #ddd;}
+	#mobNav ul, #mobNav li{width:100%;}
+	#mobNav li{font-size:12px; line-height:28px; text-align:center; text-transform:uppercase;}
+	#mobNav li a.mobNavTitle{display:block; width:100%; line-height:35px; font-size:14px; font-weight:700;
+		border-bottom:1px solid #214a84; margin:0 auto;}
+
+	#mobNav .mobSubNav{display:none;}

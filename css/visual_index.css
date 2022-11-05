@@ -1,0 +1,27 @@
+/*########## visualWrap ##########*/
+	#visualWrap, #visual, #screen{width:100%;}
+	#visualWrap{margin-bottom:50px;}
+	#screen{position:relative; overflow:hidden;}
+	#film{width:400%;}
+	#film .scene{width:25%; float:left;}
+	#film .scene a{display:block; width:100%;}
+	#film .scene img{width:100%;}
+
+	#screen #btnArrow p{width:40px; height:40px; border-radius:20px; background-color:rgba(100,100,100,.6);
+		background-repeat:no-repeat; background-image:url("../img/visualBtn.png"); position:absolute;
+		top:50%; transform:translatey(-50%); cursor:pointer;}
+	#screen #btnArrow .prev{background-position:0 -40px; left:2%;}
+	#screen #btnArrow .next{background-position:0 0; right:2%;}
+
+	#btn{width:240px; height:30px; position:absolute; left:50%; bottom:0;
+		transform:translate(-50%, -10%);}
+	#btn ul{width:100%;}
+	#btn ul li{width:20px; height:20px; border-radius:10px; background-color:rgba(100,100,100,.6); float:left; margin-left:32px; cursor:pointer;}
+
+	#btn ul span{display:none;}
+	#btn ul:after{content:""; display:block; clear:both;}
+	
+	/* 이벤트 클래스 */
+	#btn li.addBtn{background-color:rgba(200,200,200,.8);}
+
+	#film:after{content:""; display:block; clear:both;}

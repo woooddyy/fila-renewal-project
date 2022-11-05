@@ -1,0 +1,63 @@
+/*########## popFilterWrap ##########*/
+	#popBg{width:100%; height:100%; position:fixed; left:0; top:0; background-color:rgba(0,0,0,.5);}
+	#popFilterWrap{width:45%; position:absolute; right:-45%; top:0; z-index:100; background-color:#fff;
+		border-left:1px solid #ccc;}/*z-index적용중*/
+	#popFilter{width:90%; padding:0 5%; height:100%; background-color:#fff; position:relative;}
+	#popFilter .xBtn{width:30px; height:30px; position:absolute; right:30px; top:30px;}
+	#popFilter .xBtn a{display:block; width:100%; height:100%; font-weight:700; font-size:20px;}
+	#popFilter h3{text-align:center; padding:50px 0;}
+	#popFilter form, #popFilter fieldset ul, #popFilter fieldset li{width:100%;}
+	#popFilter fieldset{border:none; width:100%;}
+	#popFilter .filterArea{overflow:auto; height:500px;}
+	#popFilter .filterArea::-webkit-scrollbar{width:6px;}
+	#popFilter .filterArea::-webkit-scrollbar-thumb{background-color:#27426B; border-radius:5px;}
+	#popFilter fieldset div{width:96%; margin:0 auto;}
+	#popFilter fieldset h4{color:#555; padding:10px 0; text-transform:uppercase;}
+
+	/*selectArea 영역*/
+	#popFilter .selectArea li{width:100%; height:24px; font-size:14px; letter-spacing:0.3em;
+		line-height:24px; margin-bottom:3px; position:relative; overflow:hidden;}
+	#popFilter .selectArea li label{display:block; width:100%; height:24px; background-color:#fff;
+		cursor:pointer; background-image:url("../img/selectCircle.png"); background-repeat:no-repeat;
+		background-position:right top; margin:0 auto;}
+	#popFilter .selectArea li label.on{background-position:right bottom;}
+	#popFilter .selectArea li input{position:absolute; left:-9999px;}
+
+	/*colorArea 영역*/
+	#popFilter .colorArea li{width:34px; height:34px;
+		margin:0 10px 13px 0; float:left; position:relative;}
+	#popFilter .colorArea li input{position:absolute; left:-9999px;}
+	#popFilter .colorArea li label{display:block; width:34px; height:34px; position:absolute; left:0; top:0;
+		border-radius:18px; overflow:hidden; transform:scale(0.7); transition:transform .3s linear;
+		box-shadow:0 0 3px #333;}
+	#popFilter .colorArea li .on{transform:scale(1); box-shadow:0 0 5px #000;}
+	#popFilter .colorArea li label img{width:100%; height:100%; cursor:pointer; border-radius:18px;}
+
+	#popFilter .colorArea ul:after{content:""; display:block; clear:both;}
+
+	/*selectArea 영역*/
+	#popFilter .type li{font-size:14px; letter-spacing:0.3em; height:24px; line-height:24px; position:relative;
+		margin-bottom:3px;}
+	#popFilter .type li label{display:block; width:100%; height:24px; background-color:#fff; cursor:pointer;
+		text-transform:capitalize; background-image:url("../img/selectSqu.png");background-repeat:no-repeat;
+		background-position:right top;}
+	#popFilter .type li label.on{background-position:right bottom;}
+	#popFilter .type li input{position:absolute; left:-9999px;}
+
+	/*filterBtn 영역*/
+	#popFilter .filterBtn{background-color:#eee; padding:30px 0;}
+	#popFilter .filterBtn button{border:none; background-color:transparent; cursor:pointer; display:block;}
+	#popFilter .filterBtn .resetBtn{float:left; line-height:40px;}
+	#popFilter .filterBtn .result{float:right; height:40px; border-radius:20px; color:#fff; padding:0 30px;
+		background-color:#333; font-size:17px;}
+
+	#popFilter .filterBtn .resetBtn:hover{text-decoration:underline;}
+	#popFilter .filterBtn .result:hover{background-color:#000;}
+
+	
+@media all and (min-width:480px) and (max-width:767px){
+		#popFilterWrap{width:100%; position:absolute; right:-100%;}
+}
+@media all and (min-width:320px) and (max-width:479px){
+			#popFilterWrap{width:100%; position:absolute; right:-100%;}
+	}

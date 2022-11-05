@@ -1,0 +1,84 @@
+/*########## subVisual0 : 너비 1200px ##########*/
+	#subVisual0Wrap{width:100%; height:450px; background-color:#000; margin-bottom:100px;}
+	#subVisual0{width:1000px; height:100%; margin:0 auto;}
+
+/*##### subVisual0 / .subVisual0_img 영역 : 너비 540px #####*/
+	#subVisual0 .subVisual0_img{width:540px; height:334px; margin:58px 0; float:left; position:relative;}
+	#subVisual0 .subVisual0_img p{width:30px; height:100%; position:absolute; left:0; top:0; z-index:99;}/*z-index:99적용중*/
+	/*p영역 위치 조절하기*/
+	#subVisual0 .subVisual0_img .h1{left:30px;}
+	#subVisual0 .subVisual0_img .h2{left:60px;}
+	#subVisual0 .subVisual0_img .h3{left:90px;}
+	#subVisual0 .subVisual0_img .h4{left:120px;}
+	#subVisual0 .subVisual0_img .h5{left:150px;}
+	#subVisual0 .subVisual0_img .h6{left:180px;}
+	#subVisual0 .subVisual0_img .hmain{left:210px;}
+	#subVisual0 .subVisual0_img .h7{left:240px;}
+	#subVisual0 .subVisual0_img .h8{left:270px;}
+	#subVisual0 .subVisual0_img .h9{left:300px;}
+	#subVisual0 .subVisual0_img .h10{left:330px;}
+	#subVisual0 .subVisual0_img .h11{left:360px;}
+	#subVisual0 .subVisual0_img .h12{left:390px;}
+	#subVisual0 .subVisual0_img .h13{left:420px;}
+	#subVisual0 .subVisual0_img .h14{left:450px;}
+	#subVisual0 .subVisual0_img .h15{left:480px;}
+	#subVisual0 .subVisual0_img .h16{left:510px;}
+	#subVisual0 .subVisual0_img img{width:500px; position:absolute; left:0; top:0; display:none;}
+	#subVisual0 .subVisual0_img .hmain img{display:block;}
+	/*이미지 위치 조절하기*/
+	#subVisual0 .subVisual0_img .h1 img{left:-30px;}
+	#subVisual0 .subVisual0_img .h2 img{left:-60px;}
+	#subVisual0 .subVisual0_img .h3 img{left:-90px;}
+	#subVisual0 .subVisual0_img .h4 img{left:-120px;}
+	#subVisual0 .subVisual0_img .h5 img{left:-150px;}
+	#subVisual0 .subVisual0_img .h6 img{left:-180px;}
+	#subVisual0 .subVisual0_img .hmain img{left:-210px;}
+	#subVisual0 .subVisual0_img .h7 img{left:-240px;}
+	#subVisual0 .subVisual0_img .h8 img{left:-270px;}
+	#subVisual0 .subVisual0_img .h9 img{left:-300px;}
+	#subVisual0 .subVisual0_img .h10 img{left:-330px;}
+	#subVisual0 .subVisual0_img .h11 img{left:-360px;}
+	#subVisual0 .subVisual0_img .h12 img{left:-390px;}
+	#subVisual0 .subVisual0_img .h13 img{left:-420px;}
+	#subVisual0 .subVisual0_img .h14 img{left:-450px;}
+	#subVisual0 .subVisual0_img .h15 img{left:-480px;}
+	#subVisual0 .subVisual0_img .h16 img{left:-510px;}
+
+	/*기능 적용*/
+	#subVisual0 .subVisual0_img:hover .hmain img{display:none;}
+	#subVisual0 .subVisual0_img p:hover{z-index:98;}
+	#subVisual0 .subVisual0_img .h0:hover img{display:block;}
+	#subVisual0 .subVisual0_img .h1:hover img{display:block;}
+	#subVisual0 .subVisual0_img .h2:hover img{display:block;}
+	#subVisual0 .subVisual0_img .h3:hover img{display:block;}
+	#subVisual0 .subVisual0_img .h4:hover img{display:block;}
+	#subVisual0 .subVisual0_img .h5:hover img{display:block;}
+	#subVisual0 .subVisual0_img .h6:hover img{display:block;}
+	#subVisual0 .subVisual0_img .hmain:hover img{display:block;}
+	#subVisual0 .subVisual0_img .h7:hover img{display:block;}
+	#subVisual0 .subVisual0_img .h8:hover img{display:block;}
+	#subVisual0 .subVisual0_img .h9:hover img{display:block;}
+	#subVisual0 .subVisual0_img .h10:hover img{display:block;}
+	#subVisual0 .subVisual0_img .h11:hover img{display:block;}
+	#subVisual0 .subVisual0_img .h12:hover img{display:block;}
+	#subVisual0 .subVisual0_img .h13:hover img{display:block;}
+	#subVisual0 .subVisual0_img .h14:hover img{display:block;}
+	#subVisual0 .subVisual0_img .h15:hover img{display:block;}
+	#subVisual0 .subVisual0_img .h16:hover img{display:block;}
+	
+/*##### subVisual0 / .subVisual0_text 영역 : 너비 660px #####*/
+	#subVisual0 .subVisual0_text{width:440px; height:290px; padding:80px 0 80px 20px; float:left; color:#fff;}
+	#subVisual0 .subVisual0_text h3{text-align:left; color:#aaa; font-size:50px; font-style:italic; padding-bottom:0;
+	transition:color .3s linear; letter-spacing:3px; margin-bottom:15px;}
+	#subVisual0 .subVisual0_text em{font-style:normal; font-size:25px; font-weight:700; color:#ccc;}
+
+/*##### subVisual0 / .subVisual0_text / textBtn #####*/
+	#subVisual0 .subVisual0_text .textBtn{width:142px; height:37px; margin-top:20px; text-align:center;}
+	#subVisual0 .subVisual0_text .textBtn a{display:block; width:140px; height:35px;
+	line-height:33px; border:1px solid #fff;  color:#fff; font-size:12px; background-color:rgba(255,255,255,0);
+	transition:background-color .5s linear, color .5s linear;}
+
+	/*기능적용*/
+	#subVisual0Wrap:hover .subVisual0_text h3{color:#fff; text-shadow:0 0 10px rgba(255,255,255,0.7);}
+	#subVisual0 .subVisual0_text .textBtn a:hover, #subVisual0 .subVisual0_text .textBtn a:focus{
+	background-color:rgba(255,255,255,1); color:#000;}
