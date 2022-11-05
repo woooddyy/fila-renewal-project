@@ -59,7 +59,6 @@ $(document).ready(function(){
 		//해당 사이즈 셀렉트로 바꾸기
 		$("#buy .sizeSelect select").hide().val("sizeTitle");
 		$("#sizeNavy").show();
-		console.log($("#sizeNavy").val());
 		//이미지 바꾸기
 		mainImg.attr("src",thumbImg1[0]);
 		for(i=0;i<thum.length;i++){

@@ -2,7 +2,6 @@ $(document).ready(function(){
 	$(window).scroll(function(){
 		var nowScroll=$(document).scrollTop();
 		var blueBar=$("#historyArea .middleP p");
-		console.log($("body").width());
 		if($("body").width()>1007){
 			if(nowScroll>0){
 				blueBar.css({"height":"200px"});

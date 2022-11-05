@@ -4,7 +4,6 @@ $(document).ready(function(){
 	for(i=0;i<3;i++){
 		cateArray[i]=$("#cateTab li:eq("+i+") a");
 	}
-	//console.log(cateArray[2]);
 	var descArray=[$("#descTab"),$("#delivTab"),$("#washTab")];
 	//클릭했을때 section 가려주기, cate에 적용된 on 클래스 해제해주기
 	for(i=0;i<3;i++){

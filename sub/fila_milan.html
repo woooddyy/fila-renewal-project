@@ -334,7 +334,6 @@
 		//스크롤에 반응해서 글씨 나타나기
 		$(window).scroll(function(){
 			var nowScroll=$(document).scrollTop();
-			console.log(nowScroll);
 			if(nowScroll>0){
 				$("#title .main_img img").animate({"opacity":1},500,"linear");
 			}

@@ -4,12 +4,10 @@ jQuery(document).ready(function(){
 		if(chk==0){
 			jQuery(this).css({"backgroundPosition":"left bottom"});
 			chk=1;
-			console.log(chk);
 		}
 		else{
 			jQuery(this).css({"backgroundPosition":"left top"});
 			chk=0;
-			console.log(chk);
 		}
 	});
 	jQuery("#joinArea").hide();

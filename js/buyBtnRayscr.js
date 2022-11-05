@@ -4,7 +4,6 @@ function buyNow(){
 	var num=document.getElementById("num");
 	var productBest1_price=59000;
 	totPrice.value=productBest1_price*parseInt(num.value);
-	console.log(totPrice.value);
 	if(size0.value=="soldout"){
 		alert("매진상품입니다.\n다른 Size를 골라주세요.");
 	}

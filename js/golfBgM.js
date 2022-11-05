@@ -1,7 +1,6 @@
 $(document).ready(function(){
 	$(window).scroll(function(){
 		var nowScroll=$(document).scrollTop();
-		console.log(nowScroll);
 		if($("body").width()>=1220){
 			if(nowScroll>=4700){
 				var num=(nowScroll-4700)/5;

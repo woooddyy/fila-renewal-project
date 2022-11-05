@@ -385,7 +385,6 @@
 		var colorIcon=$("#subVisual .iconList a");
 		colorIcon.bind("click focus", function(){
 			var num=$(this).attr("href").substring(15,16);
-			//console.log(num);
 			$("#subVisual .imgArea img").before("<img src='../img/kids_subVisual_bag"+num+".jpg' alt='서브비쥬얼이미지'/>");
 			$("#subVisual .imgArea img:last").fadeOut(500,function(){
 				$("#subVisual .imgArea img:not(:first)").remove();
